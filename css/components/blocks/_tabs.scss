@@ -118,7 +118,7 @@
 
 form.email{
   input[type='text']{
-    @extend .input-secondary;
+    @extend .input-primary;
     vertical-align: top;
   }
   input[type='submit']{

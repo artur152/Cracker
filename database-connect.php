@@ -6,3 +6,4 @@ $database = "cracker";
 
 mysqli_connect($hostname,$username,$password);
 mysqli_close();
+

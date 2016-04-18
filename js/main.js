@@ -18,86 +18,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	});
 
 
-/* Date Picker */
+/* Calculator */
 $(document).ready(function(){
-	var d = new Date();
+	var submit = $('input.calc');
+	submit.click(function(e){
+		e.preventDefault();
 
-/* global datepicker */
-	$(function() {
-		$( ".datepicker" ).datepicker({
-			altField: "#actualDate",
-			duration: "slow",
-			changeMonth: true,
-			changeYear: true,
-			maxDate: "+2y +2m +1w +1d",
-			minDate: new Date(d.getFullYear(), d.getMonth(), d.getDate())
-		});
-	});
+		var price = $('.choose option:selected').val();
 
-/* lodging-datepicker-arriving */
-	$(function() {
-		$( "#lodging-datepicker-arriving" ).datepicker({
-		});
-	});
-	$(function() {
-		$( "#lodging-datepicker-departing" ).datepicker({
+		var amount = $('.js-amount').val();
+		var discount = 0.1;
+		var total_cost = price * amount;
+		var charged = total_cost - (total_cost * discount);
+		charged = charged.toFixed(2);
+		charged = charged + '$' + ' <span>, 10% discount included.</span> ';
 
-		});
-	});
-
-/* flights-datepicker-arriving */
-	$(function() {
-		$( "#flights-datepicker-arriving" ).datepicker({
-		});
-	});
-	$(function() {
-		$( "#flights-datepicker-departing" ).datepicker({
-		});
-	});
-});
-
-
-/* Sidebar Scrolling */
-var fix = 0;
-var sidebar, sidebarPos, sidebarHeight, footer, footerPos, wrap, wrapHeight;
-
-function sidebarFixed() {
-	$(document).scroll(function () {
-		//console.log(sidebarPos = sidebar.position().top);
-		//console.log(sidebarHeight = sidebar.outerHeight());
-		//console.log(footerPos = footer.position().top);
-
-		//console.log(fix, sidebarHeight);
-		//console.log(fix + sidebarHeight);
-		//console.log(footerPos);
-
-		fix = $(window).scrollTop();
-		if (fix > sidebarPos) {
-			if (fix + sidebarHeight < footerPos) {
-				sidebar.addClass('fixed').removeClass('absolute');
-			} else {
-				sidebar.addClass('absolute').removeClass('fixed');
-			}
-		}else {
-			sidebar.removeClass('fixed').removeClass('absolute');
+		console.log(price);
+		if (price == '') {
+			$('.choose').addClass('error');
+			return;
 		}
+		if(amount < 10){
+			charged = total_cost + '$' + ' <span>, sorry no discount.</span> ';
+		}
+		$('.result').html(charged);
 	});
-}
-$(document).ready(function(){
-	sidebar = $('.sidebar');
-	if(sidebar.length /*&& sidebarHeight > wrapHeight*/) {
-		footer = $('footer');
-		wrap = $('.wrap');
-		wrapHeight = wrap.outerHeight();
-		sidebarPos = sidebar.offset().top;
-		sidebarHeight = sidebar.outerHeight();
-		footerPos = footer.position().top;
-		sidebarFixed();
-	}
 
 
-		//Input Phone Nubmer Mask
-	$("#phone").mask('(999) 999 99 99');
+
 });
-
-

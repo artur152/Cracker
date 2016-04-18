@@ -6,6 +6,8 @@
     <title>Crested Butte</title>
     <link rel="shortcut icon" href="img/favicon.png">
 
+<!--    <meta http-equiv="refresh" content="5">-->
+
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -52,7 +54,7 @@
 
             <div class="main-menu">
                 <ul class="menu">
-                    <li><a href="#1">Enterprise-software</a></li>
+                    <li><a href="#1">Enterprise - software</a></li>
                     <li><a href="#2">Planning</a></li>
                     <li><a href="#3">Apps</a></li>
                     <li><a href="#4">Support</a></li>
@@ -61,7 +63,7 @@
             </div>
 
             <div class="form">
-                <form action="#searching" class="header-form" id="header-form">
+                <form action="index.php?action=search" method="post" class="header-form" id="header-form">
                     <input type="search" class="header-search" placeholder="search">
                     <input type="submit" class="header-submit" placeholder="search">
                 </form>
@@ -114,42 +116,44 @@
         
         <div class="sidebar left">
             <div class="filters">
-                <div class="filter">
-                    <div class="title">Category</div>
-                    <div class="subcategories">
-                        <div class="subcategory">
-                            <input type="checkbox" name="subcategory" id="subcategory1" value="subcategory-1" checked="">
-                            <label for="subcategory1">subcategory</label>
-                        </div>
-                        <div class="subcategory">
-                            <input type="checkbox" name="subcategory" id="subcategory2" value="subcategory-2">
-                            <label for="subcategory2">subcategory</label>
-                        </div>
-                        <div class="subcategory">
-                            <input type="checkbox" name="subcategory" id="subcategory3" value="subcategory-3">
-                            <label for="subcategory3">subcategory</label>
+                <form action="">
+                    <div class="filter">
+                        <div class="title">Category</div>
+                        <div class="subcategories">
+                            <div class="subcategory">
+                                <input type="checkbox" name="subcategory" id="subcategory1" value="subcategory-1" checked="">
+                                <label for="subcategory1">subcategory</label>
+                            </div>
+                            <div class="subcategory">
+                                <input type="checkbox" name="subcategory" id="subcategory2" value="subcategory-2">
+                                <label for="subcategory2">subcategory</label>
+                            </div>
+                            <div class="subcategory">
+                                <input type="checkbox" name="subcategory" id="subcategory3" value="subcategory-3">
+                                <label for="subcategory3">subcategory</label>
+                            </div>
                         </div>
                     </div>
-               </div>
+                    <div class="filter">
+                        <div class="title">Parameter</div>
+                        <div class="subcategories">
+                            <div class="subcategory">
+                                <input type="checkbox" name="subcategory" id="value1" value="subcategory-1" checked="">
+                                <label for="value1">value</label>
+                            </div>
+                            <div class="subcategory">
+                                <input type="checkbox" name="subcategory" id="value2" value="subcategory-2">
+                                <label for="value2">value</label>
+                            </div>
+                            <div class="subcategory">
+                                <input type="checkbox" name="subcategory" id="value3" value="subcategory-3">
+                                <label for="value3">value</label>
+                            </div>
+                        </div>
+                    </div>
+                    <input class="clear-filters" value="Clear filters" type="reset">
+                </form>
 
-                <div class="filter">
-                    <div class="title">Parameter</div>
-                    <div class="subcategories">
-                        <div class="subcategory">
-                            <input type="checkbox" name="subcategory" id="value1" value="subcategory-1" checked="">
-                            <label for="value1">value</label>
-                        </div>
-                        <div class="subcategory">
-                            <input type="checkbox" name="subcategory" id="value2" value="subcategory-2">
-                            <label for="value2">value</label>
-                        </div>
-                        <div class="subcategory">
-                            <input type="checkbox" name="subcategory" id="value3" value="subcategory-3">
-                            <label for="value3">value</label>
-                        </div>
-                    </div>
-                </div>
-                <a href="#4" class="clear-filters">Clear filters</a>
             </div>
 
             <div class="filters category-name">
@@ -252,12 +256,12 @@
                         <div class="description">
                             <p class="price">1.99$</p>
                             <form action="" class="addtocard">
-                                <input type="number" class="amount" min="1" placeholder="1">
+                                <input type="number" min="1" placeholder="1">
                                 <input type="submit" class="secondary-button" value="add to card">
                             </form>
                         </div>
 
-                        <div class="characteristic">
+                        <div class="characteristics">
                             <div class="characteristic-tabs">
                                 <div class="char-tabs" id="char-tabs">
                                     <div class="tabs-buttons">
@@ -272,24 +276,33 @@
                                         <div class="tab-type" id="characteristic">
                                             <div class="info-inner">
                                                 <div class="sub-title">Feed yourself:</div>
-                                                <form action="" class="feed">
-                                                    <div class="filter">
-                                                        <div class="type">
+                                                <div class="discount">For every 10 crackers you have <strong>5%</strong> discount</div>
+
+                                                <form action="" method="post" class="feed">
+                                                    <div class="counter">
+                                                        <div class="count-left type">
                                                             <label for="select">Choose cracker</label>
                                                             <select id="select" class="choose">
-                                                                <option value="" disabled="" selected="" hidden="">---</option>
-                                                                <option value="">small</option>
-                                                                <option value="">medium</option>
-                                                                <option value="">big</option>
+<!--                                                                <option value="" disabled="" selected="" hidden="">---</option>-->
+                                                                <option value="0.99" data="" selected="">small 0.99$</option>
+                                                                <option value="1.99">medium 1.99$</option>
+                                                                <option value="2.99">big 2.99$</option>
                                                             </select>
                                                         </div>
-                                                        <div class="quantity">
+                                                        <div class="count-right quantity">
                                                             <label for="amount">how much u need?</label>
-                                                            <input class="amount" id="amount" placeholder="1" min="1" type="number">
+                                                            <input id="amount" value="1" class="js-amount" placeholder="1" min="1" type="number">
+                                                        </div>
+                                                        <div class="count-left calculate">
+                                                            <input class="calc secondary-button" value="buy" type="submit">
+                                                        </div>
+                                                        <div class="count-right cancel">
+                                                            <input class="calc secondary-button" value="clear" type="reset">
                                                         </div>
                                                     </div>
-                                                    <p class="result">19.99$</p>
+                                                    <p class="result"></p>
                                                 </form>
+
                                             </div>
                                             <div class="more">
                                                 <a href="#purchase" class="">more...</a>
@@ -299,7 +312,7 @@
                                         <div class="tab-type" id="details">
                                             <div class="info-inner">
                                                 <div class="sub-title">details:</div>
-                                                <p>
+                                                <p class="item-info">
                                                     This is a fantastic, quick to prepare snack. You will love the combination of salty/sweet taste and the crunch of the almonds and browned crackers. I got the recipe from my friend after we tasted these snacks at her home. These crackers are really pleasing to the eye and will keep several days in a container with a tightly-fitting lid. They would also make a great Christmas gift in a decorative tin.
                                                     This is a fantastic, quick to prepare snack. You will love the combination of salty/sweet taste and the crunch of the almonds and browned crackers. I got the recipe from my friend after we tasted these snacks at her home. These crackers are really pleasing to the eye and will keep several days in a container with a tightly-fitting lid. They would also make a great Christmas gift in a decorative tin.
                                                     This is a fantastic, quick to prepare snack. You will love the combination of salty/sweet taste and the crunch of the almonds and browned crackers. I got the recipe from my friend after we tasted these snacks at her home. These crackers are really pleasing to the eye and will keep several days in a container with a tightly-fitting lid. They would also make a great Christmas gift in a decorative tin.

@@ -6,9 +6,9 @@
   font-size: 16px;
   line-height: 20px;
   text-indent: 5px;
-  color: $white;
   width: 68px;
   height: 71px;
+  color: transparent;
   background-color: $red;
   background-image:  url("../img/search.png");
   background-repeat:no-repeat;
@@ -56,47 +56,60 @@
 }
 
 .primary-button{
-  text-align: center;
-  display: inline-block;
-  font-family: $font-bold;
+  position: relative;
+  float: left;
+  font-family: $font-book;
   font-size: 16px;
   line-height: 20px;
-  color: $white;
+  text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: $gray;
-  padding: 19px 40px;
-  vertical-align: middle;
-  border: 1px solid $white;
+  color: $white;
+  background-color: $gray;
+  background-repeat: no-repeat;
+  padding: 15px 40px;
+  width:100%;
+  border: none;
   outline: none;
   cursor: pointer;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  transition: all .5s ease 0s;
+  @extend .transition;
   &:hover{
     opacity:.8;
-    transition: all .5s ease 0s;
+  }
+  &::-webkit-input-placeholder {
+    color: $white;
+  }
+  &::-moz-placeholder {
+    color: $white;
+  }
+  &:-moz-placeholder {
+    color: $white;
+  }
+  &:-ms-input-placeholder {
+    color: $white;
   }
 }
 
-.input-secondary {
-  display: inline-block;
-  font-family: $font-regular;
-  font-size: 16px;
-  line-height: 20px;
+.secondary-button{
+  @extend .primary-button;
+  background-color: $darken-red;
+  padding: 15px 30px;
+  border: none;
+}
+
+.input-primary {
+  @extend .primary-button;
   text-indent: 5px;
+  text-transform: capitalize;
   color: $gray;
-  background: $white;
-  padding: 16px 15px 16px 20px;
-  width: 390px;
+  float: left;
+  background-color: $white;
+  padding: 15px 15px 15px 20px;
   background-repeat:no-repeat;
   background-position: 50% 50%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  text-transform: capitalize;
-  transition: all .5s ease 0s;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -115,41 +128,25 @@
   }
 }
 
-.secondary-button{
-  text-align: center;
-  display: inline-block;
-  font-family: $font-bold;
-  font-size: 16px;
-  line-height: 20px;
-  color: $white;
-  background: $darken-red;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  min-width: 100px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  @extend .transition;
-  &:hover{
-    opacity: 0.8;
-  }
-}
 
 //------- select ------------
 select.choose{
+  position: relative;
   font-family: $font-book;
   font-size: 16px;
   line-height: 20px;
-  color: $gray-light-2;
-  text-transform: capitalize;
-  display: block;
-  width: 100%;
-  padding: 14px 15px;
+  color: $gray;
   background-color: $gray-light-bg;
+  text-transform: capitalize;
+  width: 100%;
+  padding: 14px 40px 14px 15px;
+  height: 50px;
   background-image: url("../img/select-triangle.png");
   background-repeat: no-repeat;
   background-position: right 20px center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 
   //background-image: url(../img/cookie-1.jpg);
   //background-repeat:no-repeat;
@@ -159,9 +156,6 @@ select.choose{
   outline: none;
   border: none;
   border-bottom: 2px solid $gray;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -173,39 +167,15 @@ option{
 //------- select ------------
 
 //------- amount ------------
-input.amount {
-  font-size: 16px;
-  line-height: 20px;
-  color: $white;
-  position: relative;
-  width: 70px;
-  padding: 15px 0 15px 10px;
-  background-color: $gray;
+input[type='number'] {
+  @extend .primary-button;
+  padding: 15px 0 15px 15px;
   background-image: url("../img/arrow-input.png");
-  background-repeat:no-repeat;
   background-position: right 10px top 50%;
   //background-position: 90% 50%;
-  border: none;
-  outline: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  &::-webkit-input-placeholder {
-    color: $white;
-  }
-  &::-moz-placeholder {
-    color: $white;
-  }
-  &:-moz-placeholder {
-    color: $white;
-  }
-  &:-ms-input-placeholder {
-    color: $white;
-  }
 }
-input.amount::-webkit-outer-spin-button,
-input.amount::-webkit-inner-spin-button{
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button{
   -webkit-appearance: none;
   background: transparent;
   position: relative;
@@ -214,8 +184,8 @@ input.amount::-webkit-inner-spin-button{
   right: 0;
   top: -15px;
 }
-input.amount{
-  -moz-appearance: textfield;
+input[type='number']{
+  //-moz-appearance: textfield;
   //-moz-appearance: menuarrow;
   //-moz-appearance: none;
 }
@@ -223,33 +193,14 @@ input.amount{
 
 
 .input-date{
-  font-family: $font-book;
+  @extend .primary-button;
   font-size: 18px;
   line-height: 40px;
-  width: 100%;
-  color: $white;
   text-transform: capitalize;
   vertical-align: bottom;
-  background-color: transparent;
   padding: 0;
-  background-repeat: no-repeat;
+  background-color: transparent;
   background-position: 100% 2px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  &::-webkit-input-placeholder {
-    color: $white;
-  }
-  &::-moz-placeholder {
-    color: $white;
-  }
-  &:-moz-placeholder {
-    color: $white;
-  }
-  &:-ms-input-placeholder {
-    color: $white;
-  }
 }
 
 .events-calendar-form{
