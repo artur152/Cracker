@@ -35,12 +35,12 @@ header {
       }
       .summer{
         a{
-          background-image: url("../img/sun.png");
+          background-image: url("../img/icons/sun.png");
         }
       }
       .winter{
         a{
-          background-image: url("../img/snowflake.png");
+          background-image: url("../img/icons/snowflake.png");
         }
       }
     }
@@ -62,16 +62,17 @@ header {
       }
       .estate{
         a{
-          background-image: url("../img/mount.png");
+          background-image: url("../img/icons/mount.png");
         }
       }
       .bike{
         a{
-          background-image: url("../img/bike.png");
+          background-image: url("../img/icons/bike.png");
         }
       }
       .phone{
         p{
+          color: $white;
           font-size: 14px;
           line-height: 41px;
           margin: 0;
@@ -426,13 +427,18 @@ header {
       }
       .preview{
         width:50%;
-        height: auto;
         float: left;
+        height: auto;
+        padding: 0 50px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         img{
           position: relative;
-          top: 0;
-          left: 0;
-          transform: translate(0, 0);
+          width: 100%;
+          //top: 0;
+          //left: 0;
+          transform: translate(-50%, 0);
         }
       }
       .info{
@@ -650,22 +656,22 @@ footer{
           }
           .mail{
             &:before{
-              background-image: url(../img/mail.png);
+              background-image: url(../img/icons/mail.png);
             }
           }
           .chat{
             &:before{
-              background-image: url(../img/chat.png);
+              background-image: url(../img/icons/chat.png);
             }
           }
           .call {
             &:before {
-              background-image: url(../img/phone.png);
+              background-image: url(../img/icons/phone.png);
             }
           }
           .message {
             &:before {
-              background-image: url(../img/mobile.png);
+              background-image: url(../img/icons/mobile.png);
             }
           }
         }
@@ -805,23 +811,23 @@ footer{
         }
         &:first-child{
           a{
-            margin-left: 0;
+            padding-left: 0;
           }
         }
         &:last-child {
           a{
-            margin-right: 0;
+            padding-right: 0;
           }
         }
         a{
           display: block;
           text-align: center;
           padding: 0;
-          margin-left: 40px;
-          margin-right: 40px;
+          padding-left: 15%;
+          padding-right: 15%;
           img{
             display: block;
-            margin:0 auto;
+            max-width: 100%;
           }
         }
       }

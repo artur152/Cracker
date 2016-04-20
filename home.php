@@ -249,7 +249,8 @@
 
                 <div class="item current">
                     <a href="" class="preview">
-                        <img src="img/cookie-4.jpg" width="500" height="500" alt="1">
+                        <img src="img/cookie-1.jpg" width="250" height="250" alt="1">
+<!--                        <img src="img/cookie-4.jpg" width="500" height="500" alt="1">-->
                     </a>
                     <div class="info">
                         <div class="title">Cracker</div>
@@ -278,7 +279,7 @@
                                                 <div class="sub-title">Feed yourself:</div>
                                                 <div class="discount">For every 10 crackers you have <strong>5%</strong> discount</div>
 
-                                                <form action="" method="post" class="feed">
+                                                <form class="feed">
                                                     <div class="counter">
                                                         <div class="count-left type">
                                                             <label for="select">Choose cracker</label>
@@ -297,7 +298,7 @@
                                                             <input class="calc secondary-button" value="buy" type="submit">
                                                         </div>
                                                         <div class="count-right cancel">
-                                                            <input class="calc secondary-button" value="clear" type="reset">
+                                                            <input class="calc secondary-button js-reset" value="clear" type="reset">
                                                         </div>
                                                     </div>
                                                     <p class="result"></p>
@@ -401,16 +402,14 @@
     </div>
 
     <div class="partners">
-        <div class="wrapper">
-            <ul>
-                <li><a href="#2"><img src="img/cola.png" width="160" height="65"></a></li>
-                <li><a href="#2"><img src="img/volvo.png" width="101" height="101"></a></li>
-                <li><a href="#2"><img src="img/whiskey.png" width="113" height="105"></a></li>
-                <li><a href="#2"><img src="img/coretex.png" width="138" height="138"></a></li>
-                <li><a href="#2"><img src="img/montanya.png" width="160" height="84"></a></li>
-                <li><a href="#2"><img src="img/bud.png" width="149" height="74"></a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#2"><img src="img/cola.png" width="160" height="65"></a></li>
+            <li><a href="#2"><img src="img/volvo.png" width="101" height="101"></a></li>
+            <li><a href="#2"><img src="img/whiskey.png" width="113" height="105"></a></li>
+            <li><a href="#2"><img src="img/coretex.png" width="138" height="138"></a></li>
+            <li><a href="#2"><img src="img/montanya.png" width="160" height="84"></a></li>
+            <li><a href="#2"><img src="img/bud.png" width="149" height="74"></a></li>
+        </ul>
     </div>
 </footer>
 

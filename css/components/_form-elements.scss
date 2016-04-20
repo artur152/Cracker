@@ -10,7 +10,7 @@
   height: 71px;
   color: transparent;
   background-color: $red;
-  background-image:  url("../img/search.png");
+  background-image:  url("../img/icons/search.png");
   background-repeat:no-repeat;
   background-position: 50% 50%;
   border: none;
@@ -141,7 +141,7 @@ select.choose{
   width: 100%;
   padding: 14px 40px 14px 15px;
   height: 50px;
-  background-image: url("../img/select-triangle.png");
+  background-image: url("../img/icons/select-triangle.png");
   background-repeat: no-repeat;
   background-position: right 20px center;
   -webkit-box-sizing: border-box;
@@ -170,7 +170,7 @@ option{
 input[type='number'] {
   @extend .primary-button;
   padding: 15px 0 15px 15px;
-  background-image: url("../img/arrow-input.png");
+  background-image: url("../img/icons/arrow-input.png");
   background-position: right 10px top 50%;
   //background-position: 90% 50%;
 }
@@ -214,7 +214,7 @@ input[type='number']{
   .date-input{
     @extend .clearfix;
     input{
-      background-image: url(../img/calendar-red.png);
+      background-image: url(../img/icons/calendar-red.png);
       float: left;
       width: 48%;
       margin-left: 4%;

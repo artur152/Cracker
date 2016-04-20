@@ -78,7 +78,7 @@ h4 {
   height: 71px;
   color: transparent;
   background-color: #BD1A20;
-  background-image: url("../img/search.png");
+  background-image: url("../img/icons/search.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border: none;
@@ -184,7 +184,7 @@ select.choose {
   width: 100%;
   padding: 14px 40px 14px 15px;
   height: 50px;
-  background-image: url("../img/select-triangle.png");
+  background-image: url("../img/icons/select-triangle.png");
   background-repeat: no-repeat;
   background-position: right 20px center;
   -webkit-box-sizing: border-box;
@@ -202,7 +202,7 @@ select.choose {
 
 input[type='number'] {
   padding: 15px 0 15px 15px;
-  background-image: url("../img/arrow-input.png");
+  background-image: url("../img/icons/arrow-input.png");
   background-position: right 10px top 50%; }
 
 input[type='number']::-webkit-outer-spin-button,
@@ -231,7 +231,7 @@ input[type='number']::-webkit-inner-spin-button {
   text-transform: capitalize;
   margin-bottom: 25px; }
 .events-calendar-form .date-input input {
-  background-image: url(../img/calendar-red.png);
+  background-image: url(../img/icons/calendar-red.png);
   float: left;
   width: 48%;
   margin-left: 4%; }
@@ -321,7 +321,7 @@ input[type='number']::-webkit-inner-spin-button {
       float: left;
       text-indent: -9999px;
       background-color: rgba(0, 0, 0, 0.5);
-      background-image: url(../img/sc-social.png);
+      background-image: url(../img/icons/sc-social.png);
       background-position: 0 0;
       background-repeat: no-repeat;
       border-radius: 50%;
@@ -727,9 +727,9 @@ header {
         header .header-top .seasons li:hover {
           opacity: 0.3; }
       header .header-top .seasons .summer a {
-        background-image: url("../img/sun.png"); }
+        background-image: url("../img/icons/sun.png"); }
       header .header-top .seasons .winter a {
-        background-image: url("../img/snowflake.png"); }
+        background-image: url("../img/icons/snowflake.png"); }
     header .header-top .header-info {
       display: inline-block;
       padding: 0; }
@@ -743,10 +743,11 @@ header {
       header .header-top .header-info > div:last-child {
         padding-right: 0; }
       header .header-top .header-info .estate a {
-        background-image: url("../img/mount.png"); }
+        background-image: url("../img/icons/mount.png"); }
       header .header-top .header-info .bike a {
-        background-image: url("../img/bike.png"); }
+        background-image: url("../img/icons/bike.png"); }
       header .header-top .header-info .phone p {
+        color: #fff;
         font-size: 14px;
         line-height: 41px;
         margin: 0; }
@@ -1005,13 +1006,16 @@ header {
       top: 0; }
     .content .items .item.current .preview {
       width: 50%;
+      float: left;
       height: auto;
-      float: left; }
+      padding: 0 50px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
       .content .items .item.current .preview img {
         position: relative;
-        top: 0;
-        left: 0;
-        transform: translate(0, 0); }
+        width: 100%;
+        transform: translate(-50%, 0); }
     .content .items .item.current .info {
       position: relative;
       width: 50%;
@@ -1174,13 +1178,13 @@ footer .contact-us {
             background-size: auto auto;
             margin-right: 10px; }
         footer .contact-us .contact-menu ul li .mail:before {
-          background-image: url(../img/mail.png); }
+          background-image: url(../img/icons/mail.png); }
         footer .contact-us .contact-menu ul li .chat:before {
-          background-image: url(../img/chat.png); }
+          background-image: url(../img/icons/chat.png); }
         footer .contact-us .contact-menu ul li .call:before {
-          background-image: url(../img/phone.png); }
+          background-image: url(../img/icons/phone.png); }
         footer .contact-us .contact-menu ul li .message:before {
-          background-image: url(../img/mobile.png); }
+          background-image: url(../img/icons/mobile.png); }
   footer .contact-us .connections .logo {
     float: left;
     margin-right: 20px; }
@@ -1281,17 +1285,17 @@ footer .partners {
       footer .partners ul li:hover {
         opacity: .6; }
       footer .partners ul li:first-child a {
-        margin-left: 0; }
+        padding-left: 0; }
       footer .partners ul li:last-child a {
-        margin-right: 0; }
+        padding-right: 0; }
       footer .partners ul li a {
         display: block;
         text-align: center;
         padding: 0;
-        margin-left: 40px;
-        margin-right: 40px; }
+        padding-left: 15%;
+        padding-right: 15%; }
         footer .partners ul li a img {
           display: block;
-          margin: 0 auto; }
+          max-width: 100%; }
 
 /*# sourceMappingURL=base.css.map */
