@@ -449,147 +449,89 @@ header {
         cursor: auto;
         .title{
           text-align: center;
-        }
-        .description{
-          @extend .clearfix;
-          position: relative;
-          top: 0;
-          left: 0;
-          padding-top: 20px;
-          .price{
-            font-family:$font-bold;
-            margin: 15px 0;
-            padding: 0;
-            width: 35%;
-            float: left;
-          }
-          form.addtocard{
-            overflow: hidden;
-            input[type='number']{
-              width: 35%;
-            }
-            input[type='submit']{
-              overflow: hidden;
-              width:auto;
-              padding: 15px;
-            }
-          }
+          text-transform: uppercase;
         }
       }
-      .characteristics{
-        margin-top: 20px;
-        .characteristic-tabs{
-          .tabs-buttons{
-            ul{
+      .characteristic-tabs{
+         margin-top: 20px;
+        .tabs-buttons{
+          ul{
+            display: table-cell;
+            padding: 0;
+            li{
               display: table-cell;
               padding: 0;
-              li{
-                display: table-cell;
-                padding: 0;
-                outline: none;
-                &.ui-tabs-active a {
-                  font-size: 16px;
-                  line-height: 18px;
-                  background: $white;
-                  color: $red;
-                }
-              }
-            }
-            a{
-              font-family: $font-bold;
-              font-size: 14px;
-              line-height: 16px;
-              color: $gray;
-              text-transform: uppercase;
-              text-align: center;
-              background: $gray-light-bg;
-              padding: 10px 10px;
-              margin-right: 5px;
-              border: 1px solid $gray-light;
-              border-bottom:none;
-              transition: none;
               outline: none;
-              display: block;
+              &.ui-tabs-active a {
+                font-size: 16px;
+                line-height: 18px;
+                background: $white;
+                color: $red;
+              }
             }
           }
-          .tab-content{
-            position: relative;
-            padding: 15px;
+          a{
+            font-family: $font-bold;
+            font-size: 14px;
+            line-height: 16px;
+            color: $gray;
+            text-transform: uppercase;
+            text-align: center;
+            background: $gray-light-bg;
+            padding: 10px 10px;
+            margin-right: 5px;
             border: 1px solid $gray-light;
-            .info-inner{
-              min-height: 300px;
-              .sub-title{
-                font-family:$font-bold;
-                text-transform: uppercase;
-                margin-bottom: 15px;
-              }
-              .discount{
-                margin-bottom: 15px;
-              }
-              .item-info{
-                max-height: 300px;
-                overflow: hidden;
-                margin: 15px 0 30px 0;
-              }
-              .result{
-                margin: 15px;
-                font-family: $font-bold;
-                text-transform: uppercase;
-                span{
-                  font-family: $font-book;
-                  font-size: 14px;
-                  line-height: 16px;
-                  text-transform: none;
-                  color: $gray-light;
-                }
-              }
-              form.feed{
-                margin-top: 30px;
-                .counter{
-                  @extend .clearfix;
-                  .count-left{
-                    width:48%;
-                    float: left;
-                    margin-bottom: 10px;
-                  }
-                  .count-right{
-                    width: 48%;
-                    float: right;
-                    margin-bottom: 10px;
-                  }
-                }
-                label{
-                  font-family:$font-bold;
-                  font-size: 12px;
-                  text-transform: uppercase;
-                  display: block;
-                  margin-bottom: 10px;
-                  cursor: pointer;
-                }
-              }
-            }
-            .more{
-              text-align: center;
-              position: absolute;
-              bottom: 15px;
-              left: 50%;
-              a{
-                display: inline ;
-                font-family: $font-bold;
-                color: $gray;
-                text-transform: uppercase;
-                font-size: 12px;
-                line-height: 14px;
-              }
+            border-bottom:none;
+            transition: none;
+            outline: none;
+            display: block;
+          }
+        }
+        .tab-content{
+          position: relative;
+          padding: 15px;
+          border: 1px solid $gray-light;
+        }
+        .info-inner{
+          min-height: 300px;
+          .sub-title{
+            font-family:$font-bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+          }
+          .info-item{
+            max-height: 300px;
+            overflow: hidden;
+            margin: 15px 0 30px 0;
+          }
+          .more{
+            text-align: center;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            a{
+              display: inline ;
+              font-family: $font-bold;
+              color: $gray;
+              text-transform: uppercase;
+              font-size: 12px;
+              line-height: 14px;
             }
           }
         }
-
       }
     }
   }
 }
 
+
+//add.php
+
+.add{
+  form.feed .counter .count-left:first-of-type{
+    width:100%;
+  }
+}
 
 
 footer{
@@ -805,26 +747,22 @@ footer{
       li{
         display: table-cell;
         vertical-align: middle;
+        padding-left: 20px;
+        padding-right: 20px;
         &:hover{
           @extend .transition;
           opacity: .6;
         }
         &:first-child{
-          a{
             padding-left: 0;
-          }
         }
         &:last-child {
-          a{
             padding-right: 0;
-          }
         }
         a{
           display: block;
           text-align: center;
           padding: 0;
-          padding-left: 15%;
-          padding-right: 15%;
           img{
             display: block;
             max-width: 100%;

@@ -87,7 +87,7 @@ h4 {
   text-transform: uppercase;
   transition: all .5s ease 0s; }
   .header-search:hover {
-    background-color: #AB171D; }
+    background-color: #9C9C9C; }
   .header-search::-webkit-input-placeholder {
     color: transparent; }
   .header-search::-moz-placeholder {
@@ -136,6 +136,8 @@ h4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+  .primary-button:active, .secondary-button:active, form.email input[type='submit']:active, footer .contact-us .contact-menu ul li a:active, .input-primary:active, form.email input[type='text']:active, input[type='number']:active, .input-date:active, .primary-button:focus, .secondary-button:focus, form.email input[type='submit']:focus, footer .contact-us .contact-menu ul li a:focus, .input-primary:focus, form.email input[type='text']:focus, input[type='number']:focus, .input-date:focus {
+    outline: 2px solid #6bcedd; }
   .primary-button:hover, .secondary-button:hover, form.email input[type='submit']:hover, footer .contact-us .contact-menu ul li a:hover, .input-primary:hover, form.email input[type='text']:hover, input[type='number']:hover, .input-date:hover {
     opacity: .8; }
   .primary-button::-webkit-input-placeholder, .secondary-button::-webkit-input-placeholder, form.email input[type='submit']::-webkit-input-placeholder, footer .contact-us .contact-menu ul li a::-webkit-input-placeholder, .input-primary::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, .input-date::-webkit-input-placeholder {
@@ -190,13 +192,15 @@ select.choose {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  outline: none;
   border: none;
   border-bottom: 2px solid #393A3F;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
+  select.choose:active, select.choose:focus {
+    outline: 2px solid #6bcedd; }
   select.choose option {
     padding-top: 10px; }
 
@@ -247,7 +251,74 @@ input[type='number']::-webkit-inner-spin-button {
   .events-calendar-form .date-submit input:first-child {
     margin-left: 0; }
 
-.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, .content .items .item.current .info .description:after, .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner form.feed .counter:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
+.addtocard {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 20px; }
+  .addtocard form .price {
+    font-family: "gotham-bold", sans-serif;
+    margin: 15px 0;
+    padding: 0;
+    width: 35%;
+    float: left; }
+  .addtocard form .pickUp {
+    float: right;
+    width: 65%; }
+  .addtocard form input[type='number'] {
+    width: 35%; }
+  .addtocard form input[type='submit'] {
+    width: 65%;
+    padding: 15px; }
+
+form.feed {
+  margin-top: 30px;
+  min-height: 300px; }
+  form.feed .form-title {
+    font-family: "gotham-bold", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+  form.feed .discount {
+    margin-bottom: 15px; }
+  form.feed .counter label {
+    font-family: "gotham-bold", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer; }
+  form.feed .counter .count-left {
+    width: 49%;
+    float: left;
+    margin-bottom: 10px; }
+  form.feed .counter .count-right {
+    width: 49%;
+    float: right;
+    margin-bottom: 10px; }
+  form.feed .counter .description {
+    clear: both;
+    margin-bottom: 10px; }
+    form.feed .counter .description textarea {
+      width: 100%;
+      border: none;
+      padding: 15px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      form.feed .counter .description textarea:active, form.feed .counter .description textarea:focus {
+        outline: 2px solid #6bcedd; }
+  form.feed .result {
+    margin: 15px;
+    font-family: "gotham-bold", sans-serif;
+    text-transform: uppercase; }
+    form.feed .result span {
+      font-family: "gotham-book", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: none;
+      color: #9C9C9C; }
+
+.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .addtocard:after, .addtocard form:after, form.feed .counter:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
   content: "";
   clear: both;
   display: table; }
@@ -1023,41 +1094,23 @@ header {
       background: none;
       cursor: auto; }
       .content .items .item.current .info .title {
-        text-align: center; }
-      .content .items .item.current .info .description {
-        position: relative;
-        top: 0;
-        left: 0;
-        padding-top: 20px; }
-        .content .items .item.current .info .description .price {
-          font-family: "gotham-bold", sans-serif;
-          margin: 15px 0;
-          padding: 0;
-          width: 35%;
-          float: left; }
-        .content .items .item.current .info .description form.addtocard {
-          overflow: hidden; }
-          .content .items .item.current .info .description form.addtocard input[type='number'] {
-            width: 35%; }
-          .content .items .item.current .info .description form.addtocard input[type='submit'] {
-            overflow: hidden;
-            width: auto;
-            padding: 15px; }
-    .content .items .item.current .characteristics {
+        text-align: center;
+        text-transform: uppercase; }
+    .content .items .item.current .characteristic-tabs {
       margin-top: 20px; }
-      .content .items .item.current .characteristics .characteristic-tabs .tabs-buttons ul {
+      .content .items .item.current .characteristic-tabs .tabs-buttons ul {
         display: table-cell;
         padding: 0; }
-        .content .items .item.current .characteristics .characteristic-tabs .tabs-buttons ul li {
+        .content .items .item.current .characteristic-tabs .tabs-buttons ul li {
           display: table-cell;
           padding: 0;
           outline: none; }
-          .content .items .item.current .characteristics .characteristic-tabs .tabs-buttons ul li.ui-tabs-active a {
+          .content .items .item.current .characteristic-tabs .tabs-buttons ul li.ui-tabs-active a {
             font-size: 16px;
             line-height: 18px;
             background: #fff;
             color: #BD1A20; }
-      .content .items .item.current .characteristics .characteristic-tabs .tabs-buttons a {
+      .content .items .item.current .characteristic-tabs .tabs-buttons a {
         font-family: "gotham-bold", sans-serif;
         font-size: 14px;
         line-height: 16px;
@@ -1072,61 +1125,35 @@ header {
         transition: none;
         outline: none;
         display: block; }
-      .content .items .item.current .characteristics .characteristic-tabs .tab-content {
+      .content .items .item.current .characteristic-tabs .tab-content {
         position: relative;
         padding: 15px;
         border: 1px solid #9C9C9C; }
-        .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner {
-          min-height: 300px; }
-          .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner .sub-title {
-            font-family: "gotham-bold", sans-serif;
-            text-transform: uppercase;
-            margin-bottom: 15px; }
-          .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner .discount {
-            margin-bottom: 15px; }
-          .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner .item-info {
-            max-height: 300px;
-            overflow: hidden;
-            margin: 15px 0 30px 0; }
-          .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner .result {
-            margin: 15px;
-            font-family: "gotham-bold", sans-serif;
-            text-transform: uppercase; }
-            .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner .result span {
-              font-family: "gotham-book", sans-serif;
-              font-size: 14px;
-              line-height: 16px;
-              text-transform: none;
-              color: #9C9C9C; }
-          .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner form.feed {
-            margin-top: 30px; }
-            .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner form.feed .counter .count-left {
-              width: 48%;
-              float: left;
-              margin-bottom: 10px; }
-            .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner form.feed .counter .count-right {
-              width: 48%;
-              float: right;
-              margin-bottom: 10px; }
-            .content .items .item.current .characteristics .characteristic-tabs .tab-content .info-inner form.feed label {
-              font-family: "gotham-bold", sans-serif;
-              font-size: 12px;
-              text-transform: uppercase;
-              display: block;
-              margin-bottom: 10px;
-              cursor: pointer; }
-        .content .items .item.current .characteristics .characteristic-tabs .tab-content .more {
+      .content .items .item.current .characteristic-tabs .info-inner {
+        min-height: 300px; }
+        .content .items .item.current .characteristic-tabs .info-inner .sub-title {
+          font-family: "gotham-bold", sans-serif;
+          text-transform: uppercase;
+          margin-bottom: 15px; }
+        .content .items .item.current .characteristic-tabs .info-inner .info-item {
+          max-height: 300px;
+          overflow: hidden;
+          margin: 15px 0 30px 0; }
+        .content .items .item.current .characteristic-tabs .info-inner .more {
           text-align: center;
           position: absolute;
           bottom: 15px;
           left: 50%; }
-          .content .items .item.current .characteristics .characteristic-tabs .tab-content .more a {
+          .content .items .item.current .characteristic-tabs .info-inner .more a {
             display: inline;
             font-family: "gotham-bold", sans-serif;
             color: #393A3F;
             text-transform: uppercase;
             font-size: 12px;
             line-height: 14px; }
+
+.add form.feed .counter .count-left:first-of-type {
+  width: 100%; }
 
 footer .contact-us {
   position: relative;
@@ -1281,19 +1308,19 @@ footer .partners {
     display: table; }
     footer .partners ul li {
       display: table-cell;
-      vertical-align: middle; }
+      vertical-align: middle;
+      padding-left: 20px;
+      padding-right: 20px; }
       footer .partners ul li:hover {
         opacity: .6; }
-      footer .partners ul li:first-child a {
+      footer .partners ul li:first-child {
         padding-left: 0; }
-      footer .partners ul li:last-child a {
+      footer .partners ul li:last-child {
         padding-right: 0; }
       footer .partners ul li a {
         display: block;
         text-align: center;
-        padding: 0;
-        padding-left: 15%;
-        padding-right: 15%; }
+        padding: 0; }
         footer .partners ul li a img {
           display: block;
           max-width: 100%; }

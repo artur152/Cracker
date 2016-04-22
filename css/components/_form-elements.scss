@@ -19,7 +19,7 @@
   text-transform: uppercase;
   transition: all .5s ease 0s;
   &:hover{
-    background-color: #AB171D;
+    background-color: $gray-light;
   }
   &::-webkit-input-placeholder {
     color: transparent;
@@ -76,6 +76,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   @extend .transition;
+  &:active, &:focus{
+    outline: 2px solid $outline;
+  }
   &:hover{
     opacity:.8;
   }
@@ -128,7 +131,6 @@
   }
 }
 
-
 //------- select ------------
 select.choose{
   position: relative;
@@ -153,16 +155,19 @@ select.choose{
   //background-position: 10px 50%;
   //background-size: 20px 20px;
   
-  outline: none;
   border: none;
   border-bottom: 2px solid $gray;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-option{
-  padding-top: 10px;
-}
+  outline: none;
+  &:active, &:focus{
+    outline: 2px solid $outline;
+  }
+  option{
+    padding-top: 10px;
+  }
 }
 //------- select ------------
 
@@ -239,4 +244,108 @@ input[type='number']{
     }
   }
 }
+
+.addtocard{
+  @extend .clearfix;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  form{
+    @extend .clearfix;
+    .price{
+      font-family:$font-bold;
+      margin: 15px 0;
+      padding: 0;
+      width: 35%;
+      float: left;
+    }
+    .pickUp{
+      float: right;
+      width: 65%;
+    }
+    input[type='number']{
+      width: 35%;
+    }
+    input[type='submit']{
+      width:65%;
+      padding: 15px;
+    }
+  }
+}
+
+form.feed{
+  margin-top: 30px;
+  min-height: 300px;
+  .form-title{
+    font-family:$font-bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  .discount{
+    margin-bottom: 15px;
+  }
+  .counter{
+    @extend .clearfix;
+    label{
+      font-family:$font-bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .count-left{
+      width: 49%;
+      float: left;
+      margin-bottom: 10px;
+    }
+    .count-right{
+      width: 49%;
+      float: right;
+      margin-bottom: 10px;
+    }
+    .description{
+      clear: both;
+      margin-bottom: 10px;
+      textarea{
+        width:100%;
+        border: none;
+        padding: 15px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        &:active, &:focus{
+          outline: 2px solid $outline;
+        }
+      }
+    }
+  }
+  .result{
+    margin: 15px;
+    font-family: $font-bold;
+    text-transform: uppercase;
+    span{
+      font-family: $font-book;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: none;
+      color: $gray-light;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

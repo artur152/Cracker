@@ -4,6 +4,9 @@ $password = "1";
 $hostname = "localhost";
 $database = "cracker";
 
-mysqli_connect($hostname,$username,$password);
-mysqli_close();
+$db = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+
+$stmt = $db->prepare("INSERT INTO id, firstname, lastname FROM MyGuests");
+$stmt->execute();
+
 
