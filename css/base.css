@@ -116,7 +116,7 @@ h4 {
   cursor: pointer;
   white-space: pre; }
 
-.primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date {
+.primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, .sidebar .filters .clear-filters {
   position: relative;
   float: left;
   font-family: "gotham-book", sans-serif;
@@ -136,17 +136,17 @@ h4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .primary-button:active, .secondary-button:active, form.email input[type='submit']:active, footer .contact-us .contact-menu ul li a:active, .input-primary:active, form.email input[type='text']:active, input[type='number']:active, .input-date:active, .primary-button:focus, .secondary-button:focus, form.email input[type='submit']:focus, footer .contact-us .contact-menu ul li a:focus, .input-primary:focus, form.email input[type='text']:focus, input[type='number']:focus, .input-date:focus {
+  .primary-button:active, .secondary-button:active, form.email input[type='submit']:active, footer .contact-us .contact-menu ul li a:active, .input-primary:active, form.email input[type='text']:active, input[type='number']:active, .input-date:active, .sidebar .filters .clear-filters:active, .primary-button:focus, .secondary-button:focus, form.email input[type='submit']:focus, footer .contact-us .contact-menu ul li a:focus, .input-primary:focus, form.email input[type='text']:focus, input[type='number']:focus, .input-date:focus, .sidebar .filters .clear-filters:focus {
     outline: 2px solid #6bcedd; }
-  .primary-button:hover, .secondary-button:hover, form.email input[type='submit']:hover, footer .contact-us .contact-menu ul li a:hover, .input-primary:hover, form.email input[type='text']:hover, input[type='number']:hover, .input-date:hover {
+  .primary-button:hover, .secondary-button:hover, form.email input[type='submit']:hover, footer .contact-us .contact-menu ul li a:hover, .input-primary:hover, form.email input[type='text']:hover, input[type='number']:hover, .input-date:hover, .sidebar .filters .clear-filters:hover {
     opacity: .8; }
-  .primary-button::-webkit-input-placeholder, .secondary-button::-webkit-input-placeholder, form.email input[type='submit']::-webkit-input-placeholder, footer .contact-us .contact-menu ul li a::-webkit-input-placeholder, .input-primary::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, .input-date::-webkit-input-placeholder {
+  .primary-button::-webkit-input-placeholder, .secondary-button::-webkit-input-placeholder, form.email input[type='submit']::-webkit-input-placeholder, footer .contact-us .contact-menu ul li a::-webkit-input-placeholder, .input-primary::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, .input-date::-webkit-input-placeholder, .sidebar .filters .clear-filters::-webkit-input-placeholder {
     color: #fff; }
-  .primary-button::-moz-placeholder, .secondary-button::-moz-placeholder, form.email input[type='submit']::-moz-placeholder, footer .contact-us .contact-menu ul li a::-moz-placeholder, .input-primary::-moz-placeholder, form.email input[type='text']::-moz-placeholder, input[type='number']::-moz-placeholder, .input-date::-moz-placeholder {
+  .primary-button::-moz-placeholder, .secondary-button::-moz-placeholder, form.email input[type='submit']::-moz-placeholder, footer .contact-us .contact-menu ul li a::-moz-placeholder, .input-primary::-moz-placeholder, form.email input[type='text']::-moz-placeholder, input[type='number']::-moz-placeholder, .input-date::-moz-placeholder, .sidebar .filters .clear-filters::-moz-placeholder {
     color: #fff; }
-  .primary-button:-moz-placeholder, .secondary-button:-moz-placeholder, form.email input[type='submit']:-moz-placeholder, footer .contact-us .contact-menu ul li a:-moz-placeholder, .input-primary:-moz-placeholder, form.email input[type='text']:-moz-placeholder, input[type='number']:-moz-placeholder, .input-date:-moz-placeholder {
+  .primary-button:-moz-placeholder, .secondary-button:-moz-placeholder, form.email input[type='submit']:-moz-placeholder, footer .contact-us .contact-menu ul li a:-moz-placeholder, .input-primary:-moz-placeholder, form.email input[type='text']:-moz-placeholder, input[type='number']:-moz-placeholder, .input-date:-moz-placeholder, .sidebar .filters .clear-filters:-moz-placeholder {
     color: #fff; }
-  .primary-button:-ms-input-placeholder, .secondary-button:-ms-input-placeholder, form.email input[type='submit']:-ms-input-placeholder, footer .contact-us .contact-menu ul li a:-ms-input-placeholder, .input-primary:-ms-input-placeholder, form.email input[type='text']:-ms-input-placeholder, input[type='number']:-ms-input-placeholder, .input-date:-ms-input-placeholder {
+  .primary-button:-ms-input-placeholder, .secondary-button:-ms-input-placeholder, form.email input[type='submit']:-ms-input-placeholder, footer .contact-us .contact-menu ul li a:-ms-input-placeholder, .input-primary:-ms-input-placeholder, form.email input[type='text']:-ms-input-placeholder, input[type='number']:-ms-input-placeholder, .input-date:-ms-input-placeholder, .sidebar .filters .clear-filters:-ms-input-placeholder {
     color: #fff; }
 
 .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a {
@@ -318,7 +318,7 @@ form.feed {
       text-transform: none;
       color: #9C9C9C; }
 
-.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .addtocard:after, .addtocard form:after, form.feed .counter:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
+.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .addtocard:after, .addtocard form:after, form.feed .counter:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, .content .items .item.current .banner.secondary:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
   content: "";
   clear: both;
   display: table; }
@@ -327,7 +327,7 @@ form.feed {
   max-width: 1200px;
   margin: 0 auto; }
 
-.transition, .primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, .social-share ul li a:hover, footer .contact-us .connections .social ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .menu-categories .category a, .menu-categories .subcategory a, .sidebar .filters .filter .subcategories .subcategory input + label:before, .content .items .item .info, footer .partners ul li:hover {
+.transition, .primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, .sidebar .filters .clear-filters, .social-share ul li a:hover, footer .contact-us .connections .social ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .menu-categories .category a, .menu-categories .subcategory a, .sidebar .filters .filter .subcategories .subcategory input + label:before, .content .items .item .info, .content .items .item.current .banner.secondary .slider-detail .slick-arrow, footer .partners ul li:hover {
   transition: all .5s ease 0s; }
 
 .play-button:before, .weather .views .cams .item .camera a:before {
@@ -749,7 +749,7 @@ form.feed {
         bottom: 0; }
       .tabs .tab .input-number input[type="number"] {
         -moz-appearance: menuarrow; }
-    .tabs .tab .primary-button, .tabs .tab .secondary-button, .tabs .tab form.email input[type='submit'], form.email .tabs .tab input[type='submit'], .tabs .tab footer .contact-us .contact-menu ul li a, footer .contact-us .contact-menu ul li .tabs .tab a, .tabs .tab .input-primary, .tabs .tab form.email input[type='text'], form.email .tabs .tab input[type='text'], .tabs .tab input[type='number'], .tabs .tab .input-date {
+    .tabs .tab .primary-button, .tabs .tab .secondary-button, .tabs .tab form.email input[type='submit'], form.email .tabs .tab input[type='submit'], .tabs .tab footer .contact-us .contact-menu ul li a, footer .contact-us .contact-menu ul li .tabs .tab a, .tabs .tab .input-primary, .tabs .tab form.email input[type='text'], form.email .tabs .tab input[type='text'], .tabs .tab input[type='number'], .tabs .tab .input-date, .tabs .tab .sidebar .filters .clear-filters, .sidebar .filters .tabs .tab .clear-filters {
       float: right; }
     .tabs .tab.tab-flights {
       display: none; }
@@ -870,6 +870,7 @@ header {
         position: absolute;
         top: 0;
         right: 0;
+        color: #fff;
         background-color: #393A3F;
         background-position: 95% 50%;
         width: 515px;
@@ -945,7 +946,7 @@ header {
 .sidebar {
   float: left;
   margin-right: 1%;
-  width: 15%;
+  width: 20%;
   max-width: 300px; }
   .sidebar .filters {
     padding: 15px;
@@ -957,7 +958,7 @@ header {
     .sidebar .filters .filter .subcategories {
       list-style: none;
       padding: 0 0 0 15px;
-      margin: 0; }
+      margin-top: 10px; }
       .sidebar .filters .filter .subcategories .subcategory {
         margin-top: 5px; }
         .sidebar .filters .filter .subcategories .subcategory input {
@@ -989,10 +990,9 @@ header {
         .sidebar .filters .filter .subcategories .subcategory input:checked + label:before {
           background: #ab181d; }
     .sidebar .filters .clear-filters {
+      float: none;
       font-size: 12px;
       line-height: 14px;
-      color: #393A3F;
-      text-transform: uppercase;
       text-decoration: underline;
       display: block;
       margin-top: 15px; }
@@ -1075,23 +1075,95 @@ header {
     height: 600px; }
     .content .items .item.current:hover .info {
       top: 0; }
-    .content .items .item.current .preview {
+    .content .items .item.current .banner.secondary {
+      position: relative;
       width: 50%;
       float: left;
       height: auto;
-      padding: 0 50px;
+      padding: 0;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
-      .content .items .item.current .preview img {
-        position: relative;
-        width: 100%;
-        transform: translate(-50%, 0); }
+      .content .items .item.current .banner.secondary .slider-detail {
+        position: relative; }
+        .content .items .item.current .banner.secondary .slider-detail:hover .slick-prev {
+          left: 0; }
+        .content .items .item.current .banner.secondary .slider-detail:hover .slick-next {
+          right: 0; }
+        .content .items .item.current .banner.secondary .slider-detail .slick-arrow {
+          z-index: 1;
+          position: absolute;
+          top: 50%;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-top: -25px;
+          background: #393A3F;
+          text-indent: -9999px;
+          padding: 0;
+          border: none;
+          outline: none;
+          text-decoration: none;
+          display: block;
+          overflow: hidden;
+          opacity: 1;
+          cursor: pointer; }
+          .content .items .item.current .banner.secondary .slider-detail .slick-arrow:after {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            width: 16px;
+            height: 16px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(45deg); }
+          .content .items .item.current .banner.secondary .slider-detail .slick-arrow:hover {
+            background: #82f3ff; }
+        .content .items .item.current .banner.secondary .slider-detail .slick-prev {
+          left: -100px; }
+        .content .items .item.current .banner.secondary .slider-detail .slick-next {
+          right: -100px; }
+          .content .items .item.current .banner.secondary .slider-detail .slick-next:after {
+            left: 13px;
+            transform: rotate(-135deg); }
+        .content .items .item.current .banner.secondary .slider-detail .slider-item {
+          outline: none;
+          margin: 0 30px; }
+          .content .items .item.current .banner.secondary .slider-detail .slider-item img {
+            margin: 0 auto;
+            width: 80%;
+            height: auto;
+            cursor: pointer; }
+        .content .items .item.current .banner.secondary .slider-detail .slick-dots {
+          padding: 0;
+          margin: 0; }
+          .content .items .item.current .banner.secondary .slider-detail .slick-dots li {
+            list-style: none;
+            display: inline-block; }
+      .content .items .item.current .banner.secondary .carousel {
+        margin-top: 10px; }
+        .content .items .item.current .banner.secondary .carousel .slick-track {
+          width: 100% !important; }
+          .content .items .item.current .banner.secondary .carousel .slick-track ul.slick-current {
+            width: 100% !important;
+            padding: 0;
+            margin: 0; }
+            .content .items .item.current .banner.secondary .carousel .slick-track ul.slick-current li {
+              list-style: none;
+              float: left;
+              margin: 0 2px;
+              box-sizing: border-box;
+              outline-offset: 0; }
+            .content .items .item.current .banner.secondary .carousel .slick-track ul.slick-current img {
+              width: 100px;
+              height: auto;
+              display: block; }
     .content .items .item.current .info {
       position: relative;
+      background: #fff;
       width: 50%;
       overflow: hidden;
-      background: none;
       cursor: auto; }
       .content .items .item.current .info .title {
         text-align: center;

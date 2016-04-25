@@ -80,7 +80,8 @@
                     <div class="info-inner">
                         <div class="characteristic-tabs">
 
-                            <form action="" class="feed " method="post" id="js-feed">
+                            <form action="" class="feed" method="post" id="js-addItems">
+                                <input type="hidden" name="form_id" value="addItems">
                                 <div class="form-title">Put some crackers</div>
                                 <div class="counter">
                                     <div class="count-left">
@@ -90,7 +91,7 @@
                                         <input id="weight" name="weight" placeholder="put item wight" class="input-primary js-weight" type="number">
                                     </div>
                                     <div class="count-right">
-                                        <input id="price" name="price" class="input-primary js-price" placeholder="put item price" type="number">
+                                        <input id="cost" name="cost" class="input-primary js-cost" placeholder="put item cost" type="number">
                                     </div>
 
                                     <div class="description">
@@ -104,7 +105,21 @@
                                         <input class="secondary-button" name="cancel" id="cancel" value="clear" type="reset">
                                     </div>
                                 </div>
-                                <p class="result" id="result"></p>
+                                <p class="result" id="result">
+                                    <?php
+
+                                        echo '<pre>';
+                                            var_dump($_POST);
+                                        echo '</pre>';
+
+                                        if(isset($_POST['form_id']) && $_POST['form_id'] === 'addItems-sdsd'){
+                                            echo ($_POST['form_id'] . " - form_id is OKEY");
+                                        }else{
+                                            echo ("form_id is WRONG");
+                                        }
+
+                                    ?>
+                                </p>
                             </form>
 
                         </div>
@@ -187,8 +202,7 @@
 
 <?php
 
-var_dump($_POST);
 
-echo '<pre>';
-var_dump($mas2);
-echo '</pre>';
+
+
+

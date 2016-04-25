@@ -116,7 +116,7 @@
 
             <div class="sidebar left">
                 <div class="filters">
-                    <form action="">
+                    <form action="" class="form-filter" method="post" id="form-filter">
                         <div class="filter">
                             <div class="title">Category</div>
                             <div class="subcategories">
@@ -153,7 +153,6 @@
                         </div>
                         <input class="clear-filters" value="Clear filters" type="reset">
                     </form>
-
                 </div>
 
                 <div class="filters category-name">
@@ -247,10 +246,48 @@
                     </div>
 
                     <div class="item current">
-                        <a href="" class="preview">
-                            <img src="img/cookie-1.jpg" width="250" height="250" alt="1">
-    <!--                        <img src="img/cookie-4.jpg" width="500" height="500" alt="1">-->
-                        </a>
+
+                        <div class="banner secondary">
+                            <div class="slider-detail">
+                                <div class="slider-item">
+                                    <div class="slider-info">
+                                        <div class="slider-image">
+                                            <img src="img/cookie-1.jpg" width="250" height="250" alt="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="slider-info">
+                                        <div class="slider-image">
+                                            <img src="img/cookie-4.jpg" width="500" height="500" alt="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="slider-info">
+                                        <div class="slider-image">
+                                            <img src="img/cookie-3.jpg" width="216" height="218" alt="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-item">
+                                    <div class="slider-info">
+                                        <div class="slider-image">
+                                            <img src="img/cookie-2.jpg" width="450" height="438" alt="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="carousel" class="carousel">
+                                <ul class="slides">
+                                    <li><img src="img/cookie-1.jpg" width="250" height="250" alt="1"></li>
+                                    <li><img src="img/cookie-4.jpg" width="500" height="500" alt="1"></li>
+                                    <li><img src="img/cookie-3.jpg" width="216" height="218" alt="1"></li>
+                                    <li><img src="img/cookie-2.jpg" width="450" height="438" alt="1"></li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="info">
                             <div class="title">Cracker</div>
                             <div class="addtocard">
@@ -288,7 +325,7 @@
                                                     </div>
                                                     <div class="count-right">
                                                         <label for="amount">how much u need?</label>
-                                                        <input id="amount" value="1" class="js-amount" placeholder="1" min="1" type="number">
+                                                        <input id="amount" value="1" placeholder="1" min="1" type="number">
                                                     </div>
                                                     <div class="count-left">
                                                         <input class="secondary-button js-calc" value="buy" type="submit">
