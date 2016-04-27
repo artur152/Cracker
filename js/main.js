@@ -55,11 +55,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var discount = 0.1;
 		var submit = '.js-calc';
 		var clear = '.js-reset';
-		var choosePrice = $('#select');
+		var choosePrice = $('#choose');
 		var price = choosePrice.find('option:selected').attr('data-price');
 		var chooseAmount = $('#amount');
 		var amount = chooseAmount.val();
 		var result = $('#result');
+		var calc_description = $('#calc-description');
 
 		console.log(price);
 
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			.on('click', clear, function(){
 				//$('#js-feed').trigger('reset');
 				result.html('');
+				calc_description.html('');
 				$('#js-feed')[0].reset();
 			});
 
@@ -100,16 +102,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				charged = total_cost + '&#36;, ' + ' <span> sorry no discount.</span> ';
 			}
 			result.html(charged);
-			console.log(price);
-			console.log(amount);
+
+			calc_description.html(description[choosePrice.val()]);
+			console.log(price + ' * ' + amount + ' = ' + price*amount );
 		}
 		calc();
 	}
-
-
-
-/* Add Cracker Items*/
-
 
 
 });

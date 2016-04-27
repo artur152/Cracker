@@ -131,13 +131,10 @@ h4 {
   padding: 15px 40px;
   width: 100%;
   border: none;
-  outline: none;
   cursor: pointer;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .primary-button:active, .secondary-button:active, form.email input[type='submit']:active, footer .contact-us .contact-menu ul li a:active, .input-primary:active, form.email input[type='text']:active, input[type='number']:active, .input-date:active, .sidebar .filters .clear-filters:active, .primary-button:focus, .secondary-button:focus, form.email input[type='submit']:focus, footer .contact-us .contact-menu ul li a:focus, .input-primary:focus, form.email input[type='text']:focus, input[type='number']:focus, .input-date:focus, .sidebar .filters .clear-filters:focus {
-    outline: 2px solid #6bcedd; }
   .primary-button:hover, .secondary-button:hover, form.email input[type='submit']:hover, footer .contact-us .contact-menu ul li a:hover, .input-primary:hover, form.email input[type='text']:hover, input[type='number']:hover, .input-date:hover, .sidebar .filters .clear-filters:hover {
     opacity: .8; }
   .primary-button::-webkit-input-placeholder, .secondary-button::-webkit-input-placeholder, form.email input[type='submit']::-webkit-input-placeholder, footer .contact-us .contact-menu ul li a::-webkit-input-placeholder, .input-primary::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, .input-date::-webkit-input-placeholder, .sidebar .filters .clear-filters::-webkit-input-placeholder {
@@ -250,19 +247,15 @@ input[type='number']::-webkit-inner-spin-button {
     margin-left: 0; }
 
 .addtocard {
-  position: relative;
-  top: 0;
-  left: 0;
-  padding-top: 20px; }
+  position: relative; }
   .addtocard form .price {
     font-family: "gotham-bold", sans-serif;
     margin: 15px 0;
     padding: 0;
-    width: 35%;
-    float: left; }
+    width: 100%;
+    text-align: center; }
   .addtocard form .pickUp {
-    float: right;
-    width: 65%; }
+    width: 100%; }
   .addtocard form input[type='number'] {
     width: 35%; }
   .addtocard form input[type='submit'] {
@@ -305,18 +298,18 @@ form.feed {
       box-sizing: border-box; }
       form.feed .counter .description textarea:active, form.feed .counter .description textarea:focus {
         outline: 2px solid #6bcedd; }
-  form.feed .result {
+  form.feed .result, form.feed .calc-description {
     margin: 15px;
     font-family: "gotham-bold", sans-serif;
     text-transform: uppercase; }
-    form.feed .result span {
+    form.feed .result span, form.feed .calc-description span {
       font-family: "gotham-book", sans-serif;
       font-size: 14px;
       line-height: 16px;
       text-transform: none;
       color: #9C9C9C; }
 
-.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .addtocard:after, .addtocard form:after, form.feed .counter:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .slider.secondary:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
+.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .addtocard form .pickUp:after, form.feed .counter:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .slider.secondary:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
   content: "";
   clear: both;
   display: table; }
@@ -808,6 +801,17 @@ form.feed {
         width: 100px;
         height: auto; }
 
+table.cookies {
+  background: #cccccc;
+  width: 100%;
+  padding: 15px; }
+  table.cookies th {
+    text-align: left;
+    background: #fff;
+    padding: 15px 0; }
+  table.cookies td {
+    padding: 15px 0; }
+
 .tabs {
   position: relative;
   z-index: 3;
@@ -1183,13 +1187,20 @@ header {
         box-sizing: border-box; }
       .content .items .item .info .description {
         position: absolute;
-        bottom: 30px;
+        top: 50px;
         left: 0; }
         .content .items .item .info .description p {
           margin: 0 0 15px 0;
           padding: 15px;
           max-height: 105px;
           overflow: hidden; }
+    .content .items .item .addtocard {
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      right: 15px;
+      z-index: 2;
+      margin: 0; }
     .content .items .item .preview {
       height: 100%;
       position: relative;

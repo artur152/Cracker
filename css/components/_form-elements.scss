@@ -70,14 +70,14 @@
   padding: 15px 40px;
   width:100%;
   border: none;
-  outline: none;
   cursor: pointer;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  //outline: none;
   @extend .transition;
   &:active, &:focus{
-    outline: 2px solid $outline;
+    //outline: 2px solid $outline;
   }
   &:hover{
     opacity:.8;
@@ -246,23 +246,18 @@ input[type='number']{
 }
 
 .addtocard{
-  @extend .clearfix;
   position: relative;
-  top: 0;
-  left: 0;
-  padding-top: 20px;
   form{
-    @extend .clearfix;
     .price{
       font-family:$font-bold;
       margin: 15px 0;
       padding: 0;
-      width: 35%;
-      float: left;
+      width: 100%;
+      text-align: center;
     }
     .pickUp{
-      float: right;
-      width: 65%;
+      @extend .clearfix;
+      width: 100%;
     }
     input[type='number']{
       width: 35%;
@@ -321,7 +316,7 @@ form.feed{
       }
     }
   }
-  .result{
+  .result, .calc-description{
     margin: 15px;
     font-family: $font-bold;
     text-transform: uppercase;

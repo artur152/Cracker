@@ -24,26 +24,28 @@
 
 <body>
 
-    <?php include 'header.php'; ?>
-    <?php include 'selectItems.php'; ?>
-
     <?php
-
-    function priceSelect($price){
-        $price = chooseDonuts();
-        $option = '';
-        foreach($price as $key_item => $item){
-            $option .= '<option value="' . $item['id'] . '" data-price="' . $item['cost'] . '">'
-            . $item['title'] . ' $' . $item['cost'] . '</option>';
-        }
-        return $option;
-    }
-
+        include 'header.php';
+        include 'selectItems.php';
+        $donut = chooseDonuts();
     ?>
 
 
-    <div class="page main">
+    <?php
+       /*
+          $product = chooseDonuts();
+          function priceSelect($price){
+            $price = chooseDonuts();
+            $option = '';
+            foreach($price as $key_item => $item){
+                $option .= '<option value="' . $item['id'] . '" data-price="' . $item['cost'] . '">'
+                . $item['title'] . ' $' . $item['cost'] . '</option>';
+            }
+            return $option;
+     */
+    ?>
 
+    <div class="page main">
         <div class="wrapper">
             <div class="menu-categories">
                 <div class="category">
@@ -210,6 +212,15 @@
                                 <p>A cracker is a baked food typically made from flour. Flavorings or seasonings, such as salt, herbs, seeds, and/or cheese, may be added to the dough or sprinkled on top before baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.</p>
                             </div>
                         </div>
+                        <div class="addtocard">
+                            <form action="" class="tocard" id="js-tocard">
+                                <div class="pickUp">
+                                    <input type="number" min="1" placeholder="1">
+                                    <input type="submit" class="secondary-button" value="add to card">
+                                </div>
+                                <div class="price">1.99$</div>
+                            </form>
+                        </div>
                         <a href="" class="preview">
                             <img src="img/cookie-4.jpg" width="500" height="500" alt="1">
                         </a>
@@ -266,15 +277,6 @@
 
                         <div class="info">
                             <div class="title">Cracker</div>
-                            <div class="addtocard">
-                                <form action="" class="">
-                                    <div class="price">1.99$</div>
-                                    <div class="pickUp">
-                                        <input type="number" min="1" placeholder="1">
-                                        <input type="submit" class="secondary-button" value="add to card">
-                                    </div>
-                                </form>
-                            </div>
                             <div class="characteristic-tabs" id="characteristic-tabs">
                                 <div class="tabs-buttons">
                                     <ul>
@@ -293,10 +295,12 @@
                                                 <div class="counter">
                                                     <div class="count-left">
                                                         <label for="select">Choose cracker</label>
-                                                        <select id="select" class="choose">
-                                                            <?php
-                                                                echo priceSelect($price);
-                                                            ?>
+                                                        <select id="choose" class="choose">
+                                                            <?php foreach($donut as $key_item => $item): ?>
+                                                                <option value="<?php echo $item['id'] ?>" data-price="<?php echo $item['cost'] ?>">
+                                                                    <?php echo $item['title'] ?> $<?php echo $item['cost'] ?>
+                                                                </option>
+                                                            <?php endforeach; ?>
                                                         </select>
                                                     </div>
                                                     <div class="count-right">
@@ -310,7 +314,15 @@
                                                         <input class="secondary-button js-reset" value="clear" type="reset">
                                                     </div>
                                                 </div>
-                                                <p class="result" id="result"></p>
+                                                <div class="result" id="result"></div>
+                                                <div class="calc-description" id="calc-description"></div>
+                                               <!--for calc-description-->
+                                                <script>
+                                                    var description = {<?php foreach($donut as $item): ?>
+                                                    <?php echo $item['id'] ?>: '<?php echo $item['description'] ?>',
+                                                    <?php endforeach; ?>}
+                                                </script>
+
                                                 <div class="more">
                                                     <a href="#purchase" class="">more...</a>
                                                 </div>
