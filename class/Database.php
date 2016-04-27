@@ -1,5 +1,5 @@
 <?php
-
+/*
 class Database
 {
     private $dsn = DB_DSN;
@@ -86,4 +86,4 @@ class Database
     {
         return $this->stmt->debugDumpParams();
     }
-}
+}*/

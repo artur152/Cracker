@@ -24,25 +24,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('.slider-detail').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		autoplay: false,
-		autoplaySpeed: 3000,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		easing: 'easeInExpo',
 		pauseOnHover: true,
 		focusOnSelect: false,
 		swipeToSlide: true,
 		infinite: true,
 		arrows: true,
-		fade: false,
 		dots: true,
 		centerMode: false,
-		adaptiveHeight: true,
-		asNavFor: '.carousel'
+		adaptiveHeight: false,
+		asNavFor: '#carousel'
 	});
 
-	$('.carousel ').slick({
+	$('#carousel').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		swipeToSlide: true,
-		asNavFor: '.slider-detail'
+		asNavFor: '.slider-detail',
+		centerMode: true,
+		focusOnSelect: true
 	});
 
 
@@ -54,10 +56,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var submit = '.js-calc';
 		var clear = '.js-reset';
 		var choosePrice = $('#select');
-		var price = choosePrice.val();
+		var price = choosePrice.find('option:selected').attr('data-price');
 		var chooseAmount = $('#amount');
 		var amount = chooseAmount.val();
 		var result = $('#result');
+
+		console.log(price);
 
 		//submit.on('click', function(e){
 		//	e.preventDefault();
@@ -84,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			});
 
 		function calc () {
-			price = choosePrice.val();
+			price = choosePrice.find('option:selected').attr('data-price');
 			amount = chooseAmount.val();
 
 			var total_cost = (price * amount).toFixed(2);
@@ -100,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			console.log(amount);
 		}
 		calc();
-
 	}
 
 

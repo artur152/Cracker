@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-require_once( "config.php" );
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//
+//require_once( "config.php" );
 
 function homepage(){
     include('home.php');
@@ -21,14 +21,11 @@ switch($action){
         homepage();
 }
 
-
 function signup(){
-    echo 'successfully registered';
+    echo 'Successfully Registered';
 }
 
 function search(){
-    echo 'your search results';
+    echo 'Your Search Results';
 }
-
-
 
