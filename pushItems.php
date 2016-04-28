@@ -9,29 +9,31 @@ $description = $_POST['description'];
 
 
 //PDO
+try {
+    $conn = new PDO("mysql:host=$hostname;dbname=cracker", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "INSERT INTO cookies (title, weight, cost, description) VALUES ('$title', '$weight', '$cost', '$description')";
+    $conn->exec($sql);
+
+    echo "<br>New record created successfully. Last inserted title is: " . $title;
+
+}
+catch(PDOException $e) {
+    echo "Database Connection failed: " . $e->getMessage();
+}
+
+
+//MySQLi Object-Oriented
 //try {
-//    $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
-//    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//
+//    $conn = new mysqli( $hostname, $username, $password, $database);
 //    $sql = "INSERT INTO cookies (title, weight, cost, description) VALUES ('$title', '$weight', '$cost', '$description')";
-//    $conn->exec($sql);
-//    echo "New record created successfully. Last inserted title is: " . $title;
-//
+//    $conn->query($sql);
+//    echo "<br> Last inserted item is: " . "<strong>$title</strong>" ;
 //}
 //catch(PDOException $e) {
 //    echo "Connection failed: " . $e->getMessage();
 //}
-
-
-//mysqli
-try {
-    $sql = "INSERT INTO cookies (title, weight, cost, description) VALUES ('$title', '$weight', '$cost', '$description')";
-    $mysqli->query($sql);
-    echo "<br> Last inserted item is: " . "<strong>$title</strong>" ;
-}
-catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
 
 
 

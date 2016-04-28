@@ -57,20 +57,16 @@
                                         <input class="secondary-button" name="cancel" id="cancel" value="clear" type="reset">
                                     </div>
                                 </div>
-                                <p class="result" id="result">
-                                    <?php
+                                <p class="result" id="result"> <?php
+                                    echo '<span>';
+                                    var_dump($_POST);
+                                    echo '</span><br>';
 
-                                        echo '<pre>';
-                                            var_dump($_POST);
-                                        echo '</pre>';
-
-                                        if(isset($_POST['form_id']) && $_POST['form_id'] === 'addItems'){
-                                            echo ($_POST['form_id'] . " - form_id is OKEY");
-                                        }else{
-                                            echo ("form_id is WRONG");
-                                        }
-
-                                    ?>
+                                    if(isset($_POST['form_id']) && $_POST['form_id'] === 'addItems'){
+                                        echo ($_POST['form_id'] . " - form_id is OKEY");
+                                    }else{
+                                        echo ("form_id is WRONG");
+                                    }?>
                                 </p>
                             </form>
 

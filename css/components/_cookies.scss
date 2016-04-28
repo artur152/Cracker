@@ -1,16 +1,64 @@
+.database{
+  .content{
+    padding: 30px;
+  }
+}
+
 table.cookies{
-  background: $gray-light-ccc;
   width:100%;
+  color: $gray;
+  background: $white;
   padding: 15px;
-  tr{
-    //padding: 15px;
+  border-bottom: 4px solid $gray-light-ccc;
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  thead{
+    tr{
+      border-bottom: 4px solid $gray-light-ccc;
+    }
+    th{
+      font-family: $font-bold;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+    }
   }
-  th{
+  tbody{
+    tr{
+      font-size: 14px;
+      line-height: 18px;
+      border-bottom: 1px solid $gray-light-ccc;
+    }
+    td{
+      &.description{
+        span{
+          height: 20px;
+          overflow: hidden;
+          display: block;
+        }
+      }
+      &.options{
+        white-space: nowrap;
+        a{
+          @extend .primary-button;
+          font-size: 12px;
+          float: none;
+          padding: 10px;
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  th, td{
+    padding: 15px;
     text-align: left;
-    background: $white;
-    padding: 15px 0;
-  }
-  td{
-    padding: 15px 0;
+    text-transform: none;
+    .title{
+      font-family: $font-bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
   }
 }

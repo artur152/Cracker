@@ -29,8 +29,6 @@
         include 'selectItems.php';
         $donut = chooseDonuts();
     ?>
-
-
     <?php
        /*
           $product = chooseDonuts();
@@ -316,13 +314,12 @@
                                                 </div>
                                                 <div class="result" id="result"></div>
                                                 <div class="calc-description" id="calc-description"></div>
-                                               <!--for calc-description-->
+                                                <!--code for calc-description-->
                                                 <script>
                                                     var description = {<?php foreach($donut as $item): ?>
                                                     <?php echo $item['id'] ?>: '<?php echo $item['description'] ?>',
                                                     <?php endforeach; ?>}
                                                 </script>
-
                                                 <div class="more">
                                                     <a href="#purchase" class="">more...</a>
                                                 </div>
@@ -335,9 +332,7 @@
                                         <div class="info-inner">
                                             <div class="sub-title">details:</div>
                                             <p class="info-item">
-                                                This is a fantastic, quick to prepare snack. You will love the combination of salty/sweet taste and the crunch of the almonds and browned crackers. I got the recipe from my friend after we tasted these snacks at her home. These crackers are really pleasing to the eye and will keep several days in a container with a tightly-fitting lid. They would also make a great Christmas gift in a decorative tin.
-                                                This is a fantastic, quick to prepare snack. You will love the combination of salty/sweet taste and the crunch of the almonds and browned crackers. I got the recipe from my friend after we tasted these snacks at her home. These crackers are really pleasing to the eye and will keep several days in a container with a tightly-fitting lid. They would also make a great Christmas gift in a decorative tin.
-                                                This is a fantastic, quick to prepare snack. You will love the combination of salty/sweet taste and the crunch of the almonds and browned crackers. I got the recipe from my friend after we tasted these snacks at her home. These crackers are really pleasing to the eye and will keep several days in a container with a tightly-fitting lid. They would also make a great Christmas gift in a decorative tin.
+                                                <!--code for details-->
                                             </p>
                                             <div class="more">
                                                 <a href="#purchase" class="">more...</a>

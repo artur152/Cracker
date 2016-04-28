@@ -116,7 +116,7 @@ h4 {
   cursor: pointer;
   white-space: pre; }
 
-.primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, .sidebar .filters .clear-filters {
+.primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, table.cookies tbody td.options a, .sidebar .filters .clear-filters {
   position: relative;
   float: left;
   font-family: "gotham-book", sans-serif;
@@ -135,15 +135,15 @@ h4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .primary-button:hover, .secondary-button:hover, form.email input[type='submit']:hover, footer .contact-us .contact-menu ul li a:hover, .input-primary:hover, form.email input[type='text']:hover, input[type='number']:hover, .input-date:hover, .sidebar .filters .clear-filters:hover {
+  .primary-button:hover, .secondary-button:hover, form.email input[type='submit']:hover, footer .contact-us .contact-menu ul li a:hover, .input-primary:hover, form.email input[type='text']:hover, input[type='number']:hover, .input-date:hover, table.cookies tbody td.options a:hover, .sidebar .filters .clear-filters:hover {
     opacity: .8; }
-  .primary-button::-webkit-input-placeholder, .secondary-button::-webkit-input-placeholder, form.email input[type='submit']::-webkit-input-placeholder, footer .contact-us .contact-menu ul li a::-webkit-input-placeholder, .input-primary::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, .input-date::-webkit-input-placeholder, .sidebar .filters .clear-filters::-webkit-input-placeholder {
+  .primary-button::-webkit-input-placeholder, .secondary-button::-webkit-input-placeholder, form.email input[type='submit']::-webkit-input-placeholder, footer .contact-us .contact-menu ul li a::-webkit-input-placeholder, .input-primary::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder, .input-date::-webkit-input-placeholder, table.cookies tbody td.options a::-webkit-input-placeholder, .sidebar .filters .clear-filters::-webkit-input-placeholder {
     color: #fff; }
-  .primary-button::-moz-placeholder, .secondary-button::-moz-placeholder, form.email input[type='submit']::-moz-placeholder, footer .contact-us .contact-menu ul li a::-moz-placeholder, .input-primary::-moz-placeholder, form.email input[type='text']::-moz-placeholder, input[type='number']::-moz-placeholder, .input-date::-moz-placeholder, .sidebar .filters .clear-filters::-moz-placeholder {
+  .primary-button::-moz-placeholder, .secondary-button::-moz-placeholder, form.email input[type='submit']::-moz-placeholder, footer .contact-us .contact-menu ul li a::-moz-placeholder, .input-primary::-moz-placeholder, form.email input[type='text']::-moz-placeholder, input[type='number']::-moz-placeholder, .input-date::-moz-placeholder, table.cookies tbody td.options a::-moz-placeholder, .sidebar .filters .clear-filters::-moz-placeholder {
     color: #fff; }
-  .primary-button:-moz-placeholder, .secondary-button:-moz-placeholder, form.email input[type='submit']:-moz-placeholder, footer .contact-us .contact-menu ul li a:-moz-placeholder, .input-primary:-moz-placeholder, form.email input[type='text']:-moz-placeholder, input[type='number']:-moz-placeholder, .input-date:-moz-placeholder, .sidebar .filters .clear-filters:-moz-placeholder {
+  .primary-button:-moz-placeholder, .secondary-button:-moz-placeholder, form.email input[type='submit']:-moz-placeholder, footer .contact-us .contact-menu ul li a:-moz-placeholder, .input-primary:-moz-placeholder, form.email input[type='text']:-moz-placeholder, input[type='number']:-moz-placeholder, .input-date:-moz-placeholder, table.cookies tbody td.options a:-moz-placeholder, .sidebar .filters .clear-filters:-moz-placeholder {
     color: #fff; }
-  .primary-button:-ms-input-placeholder, .secondary-button:-ms-input-placeholder, form.email input[type='submit']:-ms-input-placeholder, footer .contact-us .contact-menu ul li a:-ms-input-placeholder, .input-primary:-ms-input-placeholder, form.email input[type='text']:-ms-input-placeholder, input[type='number']:-ms-input-placeholder, .input-date:-ms-input-placeholder, .sidebar .filters .clear-filters:-ms-input-placeholder {
+  .primary-button:-ms-input-placeholder, .secondary-button:-ms-input-placeholder, form.email input[type='submit']:-ms-input-placeholder, footer .contact-us .contact-menu ul li a:-ms-input-placeholder, .input-primary:-ms-input-placeholder, form.email input[type='text']:-ms-input-placeholder, input[type='number']:-ms-input-placeholder, .input-date:-ms-input-placeholder, table.cookies tbody td.options a:-ms-input-placeholder, .sidebar .filters .clear-filters:-ms-input-placeholder {
     color: #fff; }
 
 .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a {
@@ -263,8 +263,7 @@ input[type='number']::-webkit-inner-spin-button {
     padding: 15px; }
 
 form.feed {
-  margin-top: 30px;
-  min-height: 300px; }
+  margin-top: 30px; }
   form.feed .form-title {
     font-family: "gotham-bold", sans-serif;
     text-transform: uppercase;
@@ -298,16 +297,26 @@ form.feed {
       box-sizing: border-box; }
       form.feed .counter .description textarea:active, form.feed .counter .description textarea:focus {
         outline: 2px solid #6bcedd; }
-  form.feed .result, form.feed .calc-description {
+  form.feed .result {
     margin: 15px;
     font-family: "gotham-bold", sans-serif;
     text-transform: uppercase; }
-    form.feed .result span, form.feed .calc-description span {
+    form.feed .result span {
       font-family: "gotham-book", sans-serif;
       font-size: 14px;
       line-height: 16px;
       text-transform: none;
       color: #9C9C9C; }
+  form.feed .calc-description {
+    font-family: "gotham-book", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 15px;
+    max-height: 80px;
+    overflow: hidden; }
+    form.feed .calc-description:first-letter {
+      font-family: "gotham-bold", sans-serif;
+      text-transform: capitalize; }
 
 .clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .addtocard form .pickUp:after, form.feed .counter:after, .wrapper:after, .social-share ul:after, footer .contact-us .connections .social ul:after, .weather:after, .slider.secondary:after, .tabs .tab:after, .tabs .tab .booking-form:after, header .header-top:after, header .header-top .seasons:after, header .header-bottom:after, header .header-bottom .wrapper:after, .menu-categories:after, .breadcrumbs nav ul:after, .content .items:after, footer .contact-us .wrapper:after, footer .contact-us .contact-menu ul:after, footer .contact-us .connections:after, footer .contact-us .in-touch:after, footer .contact-us .in-touch .menu ul:after, footer .contact-us .in-touch .newsletter form:after {
   content: "";
@@ -318,7 +327,7 @@ form.feed {
   max-width: 1200px;
   margin: 0 auto; }
 
-.transition, .primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, .sidebar .filters .clear-filters, .social-share ul li a:hover, footer .contact-us .connections .social ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .slick-arrow, .slider.secondary .carousel .slick-arrow, .slick-arrow:after, .slider.secondary .carousel .slick-arrow:after, .slider.secondary .slider-detail .slick-dots li button, .menu-categories .category a, .menu-categories .subcategory a, .sidebar .filters .filter .subcategories .subcategory input + label:before, .content .items .item .info, footer .partners ul li:hover {
+.transition, .primary-button, .secondary-button, form.email input[type='submit'], footer .contact-us .contact-menu ul li a, .input-primary, form.email input[type='text'], input[type='number'], .input-date, table.cookies tbody td.options a, .sidebar .filters .clear-filters, .social-share ul li a:hover, footer .contact-us .connections .social ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .slick-arrow, .slider.secondary .carousel .slick-arrow, .slick-arrow:after, .slider.secondary .carousel .slick-arrow:after, .slider.secondary .slider-detail .slick-dots li button, .menu-categories .category a, .menu-categories .subcategory a, .sidebar .filters .filter .subcategories .subcategory input + label:before, .content .items .item .info, footer .partners ul li:hover {
   transition: all .5s ease 0s; }
 
 .play-button:before, .weather .views .cams .item .camera a:before {
@@ -749,7 +758,7 @@ form.feed {
           background: none;
           box-shadow: none; }
   .slider.secondary .carousel {
-    margin-top: 10px;
+    margin-top: 25px;
     padding: 10px 40px;
     background: linear-gradient(#9C9C9C 50%, #cccccc);
     border: 2px solid white;
@@ -801,16 +810,49 @@ form.feed {
         width: 100px;
         height: auto; }
 
+.database .content {
+  padding: 30px; }
+
 table.cookies {
-  background: #cccccc;
   width: 100%;
-  padding: 15px; }
-  table.cookies th {
+  color: #393A3F;
+  background: #fff;
+  padding: 15px;
+  border-bottom: 4px solid #cccccc;
+  border-spacing: 0;
+  border-collapse: collapse;
+  table-layout: fixed; }
+  table.cookies thead tr {
+    border-bottom: 4px solid #cccccc; }
+  table.cookies thead th {
+    font-family: "gotham-bold", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase; }
+  table.cookies tbody tr {
+    font-size: 14px;
+    line-height: 18px;
+    border-bottom: 1px solid #cccccc; }
+  table.cookies tbody td.description span {
+    height: 20px;
+    overflow: hidden;
+    display: block; }
+  table.cookies tbody td.options {
+    white-space: nowrap; }
+    table.cookies tbody td.options a {
+      font-size: 12px;
+      float: none;
+      padding: 10px;
+      color: #fff;
+      text-decoration: underline; }
+  table.cookies th, table.cookies td {
+    padding: 15px;
     text-align: left;
-    background: #fff;
-    padding: 15px 0; }
-  table.cookies td {
-    padding: 15px 0; }
+    text-transform: none; }
+    table.cookies th .title, table.cookies td .title {
+      font-family: "gotham-bold", sans-serif;
+      text-transform: uppercase;
+      white-space: nowrap; }
 
 .tabs {
   position: relative;
@@ -888,7 +930,7 @@ table.cookies {
         bottom: 0; }
       .tabs .tab .input-number input[type="number"] {
         -moz-appearance: menuarrow; }
-    .tabs .tab .primary-button, .tabs .tab .secondary-button, .tabs .tab form.email input[type='submit'], form.email .tabs .tab input[type='submit'], .tabs .tab footer .contact-us .contact-menu ul li a, footer .contact-us .contact-menu ul li .tabs .tab a, .tabs .tab .input-primary, .tabs .tab form.email input[type='text'], form.email .tabs .tab input[type='text'], .tabs .tab input[type='number'], .tabs .tab .input-date, .tabs .tab .sidebar .filters .clear-filters, .sidebar .filters .tabs .tab .clear-filters {
+    .tabs .tab .primary-button, .tabs .tab .secondary-button, .tabs .tab form.email input[type='submit'], form.email .tabs .tab input[type='submit'], .tabs .tab footer .contact-us .contact-menu ul li a, footer .contact-us .contact-menu ul li .tabs .tab a, .tabs .tab .input-primary, .tabs .tab form.email input[type='text'], form.email .tabs .tab input[type='text'], .tabs .tab input[type='number'], .tabs .tab .input-date, .tabs .tab table.cookies tbody td.options a, table.cookies tbody td.options .tabs .tab a, .tabs .tab .sidebar .filters .clear-filters, .sidebar .filters .tabs .tab .clear-filters {
       float: right; }
     .tabs .tab.tab-flights {
       display: none; }

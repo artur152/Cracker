@@ -26,79 +26,92 @@
 
     <?php
         include 'header.php';
-        require_once('database-connect.php');
+        require_once 'database-connect.php';
+        require_once 'selectItems.php';
     ?>
-
     <?php
+        $sql = "SELECT * FROM cookies";
+        $result = $conn->query($sql);
 
-        $sql = 'SELECT * FROM cookies';
-        $result = $mysqli->query($sql);
 
-        while ($row = $result->fetch_assoc() ) {
-    //        echo " <br> id = " . $row['id'];
-    //        print_r($row);
-            $donuts[] = $row;
-        }
-        //    echo '<pre>';
+//    MySQLi Object-Oriented
+//        while ($row = $result->fetch_assoc() ) {
+//            $donuts[] = $row;
+//        }
+
+//    PDO
+        $donuts = $result->fetchAll();
+
         print_r($donuts);
-        //    echo '</pre>';
         echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-
     ?>
 
-    <div class="page main">
+    <div class="page database">
         <div class="wrapper">
             <div class="content">
 
                 <table class="cookies">
-                    <tr>
-                        <th>
-                            <?php echo 'id' ?>
-                        </th>
-                        <th>
-                            <?php echo 'title' ?>
-                        </th>
-                        <th>
-                            <?php echo 'weight' ?>
-                        </th>
-                        <th>
-                            <?php echo 'cost' ?>
-                        </th>
-                        <th>
-                            <?php echo 'description' ?>
-                        </th>
-                    </tr>
-                    <?php foreach($donuts as $key => $item): ?>
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>id</span>
+                            </th>
+                            <th>
+                                <span>title</span>
+                            </th>
+                            <th>
+                                <span>weight</span>
+                            </th>
+                            <th>
+                                <span><?php print_r(array_keys($donuts[0])[3]) ?></span>
+                            </th>
+                            <th>
+                                <span><?php print_r(array_keys($donuts[0])[4]) ?></span>
+                            </th>
+                            <th>
+                                <span>options</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($donuts as $key => $item): ?>
                         <tr>
                             <td>
-                               <?php echo $item['id'] ?>
+                                <span><?php echo $item['id'] ?></span>
                             </td>
                             <td>
-                                <?php echo $item['title']  ?>
+                                <span class="title"><?php echo $item['title']  ?></span>
                             </td>
                             <td>
-                                <?php echo $item['weight']  ?>
+                                <span><?php echo $item['weight'] . 'gm.' ?></span>
                             </td>
                             <td>
-                                <?php echo $item['cost']  ?>
+                                <span><?php echo $item['cost'] . '$' ?></span>
                             </td>
-                           <td>
-                               <?php echo $item['description']  ?>
-                           </td>
+                            <td class="description">
+                                <span>
+                                    <?php echo $item['description']  ?>
+                                </span>
+                            </td>
+                            <td class="options">
+                                <a href="edit.php?id=<?php echo $item['id'] ?>">edit</a>
+                                <a href="edit.php?id=<?php echo $item['id'] ?>">delete</a>
+                            </td>
                         </tr>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </tbody>
                 </table>
 
-                </div>
             </div>
         </div>
+    </div>
 
-        <?php
-            include 'footer.php';
-        ?>
+<!--    <script>-->
+<!--        did*.stop();-->
+<!--    </script>-->
+    <?php
+        include 'footer.php';
+    ?>
 
 </body>
 

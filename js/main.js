@@ -64,11 +64,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		console.log(price);
 
-		//submit.on('click', function(e){
-		//	e.preventDefault();
-		//	or
-		//$('body').on('click', submit, function(e){
-		//	e.preventDefault();
 
 		choosePrice.change( function(){
 			calc();
@@ -77,6 +72,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			calc();
 		});
 
+		//submit.on('click', function(e){
+		//	e.preventDefault();
+		//	or
+		//$('body').on('click', submit, function(e){
+		//	e.preventDefault();
 		$('body')
 			.on('click', submit, function(e){
 				e.preventDefault();
@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			result.html(charged);
 
 			calc_description.html(description[choosePrice.val()]);
+
 			console.log(price + ' * ' + amount + ' = ' + price*amount );
 		}
 		calc();
