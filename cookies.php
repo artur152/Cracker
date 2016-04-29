@@ -43,7 +43,6 @@
         $donuts = $result->fetchAll();
 
         print_r($donuts);
-        echo '<br>';
     ?>
 
     <div class="page database">
