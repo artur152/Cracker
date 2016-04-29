@@ -27,20 +27,18 @@
     <?php
         include 'header.php';
         require_once 'database-connect.php';
-        require_once 'selectItems.php';
     ?>
     <?php
         $sql = "SELECT * FROM cookies";
         $result = $conn->query($sql);
 
+//    PDO
+//        $donuts = $result->fetchAll();
 
 //    MySQLi Object-Oriented
-//        while ($row = $result->fetch_assoc() ) {
-//            $donuts[] = $row;
-//        }
-
-//    PDO
-        $donuts = $result->fetchAll();
+        while ($row = $result->fetch_assoc() ) {
+            $donuts[] = $row;
+        }
 
         print_r($donuts);
     ?>

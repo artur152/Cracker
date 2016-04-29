@@ -3,26 +3,26 @@
 $username = "root";
 $password = "1";
 $hostname = "localhost";
-//$database = "cracker";
+$database = "cracker";
 
 //PDO
-try {
-    $conn = new PDO("mysql:host=$hostname;dbname=cracker", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch(PDOException $e) {
-    echo "Database Connection failed: " . $e->getMessage();
-}
+//try {
+//    $conn = new PDO("mysql:host=$hostname;dbname=cracker", $username, $password);
+//    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//}
+//catch(PDOException $e) {
+//    echo "Database Connection failed: " . $e->getMessage();
+//}
 
 
-/*
-MySQLi Object-Oriented
+
+//MySQLi Object-Oriented
 $conn = new mysqli( $hostname, $username, $password, $database);
 
 if ($conn->connect_errno) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-*/
+
 
 
 

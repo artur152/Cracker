@@ -28,19 +28,20 @@
         include 'header.php';
         include 'selectItems.php';
         $donut = chooseDonuts();
+        print_r( $donut);
+
     ?>
     <?php
-       /*
-          $product = chooseDonuts();
-          function priceSelect($price){
-            $price = chooseDonuts();
-            $option = '';
-            foreach($price as $key_item => $item){
-                $option .= '<option value="' . $item['id'] . '" data-price="' . $item['cost'] . '">'
-                . $item['title'] . ' $' . $item['cost'] . '</option>';
-            }
-            return $option;
-     */
+//          $product = chooseDonuts();
+//          function priceSelect($price) {
+//              $price = chooseDonuts();
+//              $option = '';
+//              foreach ($price as $key_item => $item) {
+//                  $option .= '<option value="' . $item['id'] . '" data-price="' . $item['cost'] . '">'
+//                      . $item['title'] . ' $' . $item['cost'] . '</option>';
+//              }
+//              return $option;
+//          }
     ?>
 
     <div class="page main">
@@ -293,6 +294,7 @@
                                                 <div class="counter">
                                                     <div class="count-left">
                                                         <label for="select">Choose cracker</label>
+
                                                         <select id="choose" class="choose">
                                                             <?php foreach($donut as $key_item => $item): ?>
                                                                 <option value="<?php echo $item['id'] ?>" data-price="<?php echo $item['cost'] ?>">
