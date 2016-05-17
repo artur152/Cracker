@@ -39,8 +39,7 @@
         while ($row = $result->fetch_assoc() ) {
             $donuts[] = $row;
         }
-
-        print_r($donuts);
+//        print_r($donuts);
     ?>
 
     <div class="page database">
@@ -90,15 +89,17 @@
                                     <?php echo $item['description']  ?>
                                 </span>
                             </td>
-                            <td class="options">
-                                <a href="edit.php?id=<?php echo $item['id'] ?>">edit</a>
-                                <a href="edit.php?id=<?php echo $item['id'] ?>">delete</a>
+                            <td class="edit">
+                                <a href="edit.php?" class="primary-button" id="<?php echo $item['id'] ?>">edit</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
+                <div class="options">
+                    <a href="edit.php?" class="primary-button">delete</a>
+                    <a href="add.php?" class="primary-button">add</a>
+                </div>
             </div>
         </div>
     </div>
@@ -109,6 +110,8 @@
     <?php
         include 'footer.php';
     ?>
+
+    <a href=""></a>
 
 </body>
 

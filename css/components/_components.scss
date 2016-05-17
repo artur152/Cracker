@@ -246,7 +246,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     &.show{
-      color: red;
+      color: blue;
     }
     .more{
       width: 100%;
@@ -329,7 +329,7 @@
     font-family:$font-bold;
     width: 22%;
     font-size: 16px;
-    color: $darken-red;
+    color: $lighten-blue;
     background: none;
     border: none;
     outline:none;
@@ -358,8 +358,8 @@
         transform: translate(-50%, -50%) rotate(45deg);
         width:  6px;
         height: 6px;
-        border-left: 2px solid $red-dark;
-        border-bottom: 2px solid $red-dark;
+        border-left: 2px solid $blue;
+        border-bottom: 2px solid $blue;
         border-right: 0 solid transparent;
         border-top: 0 solid transparent;
       }
@@ -407,7 +407,7 @@
     }
   }
   .ui-datepicker-current-day{
-    background: $darken-red;
+    background: $lighten-blue;
     a{
       color: $white;
     }

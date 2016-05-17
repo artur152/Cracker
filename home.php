@@ -28,10 +28,9 @@
         include 'header.php';
         include 'selectItems.php';
         $donut = chooseDonuts();
-        print_r( $donut);
-
     ?>
     <?php
+    //PDO
 //          $product = chooseDonuts();
 //          function priceSelect($price) {
 //              $price = chooseDonuts();
@@ -45,6 +44,7 @@
     ?>
 
     <div class="page main">
+
         <div class="wrapper">
             <div class="menu-categories">
                 <div class="category">
@@ -75,7 +75,6 @@
                     <a href="#1">other categories</a>
                 </div>
             </div>
-
             <div class="breadcrumbs">
                 <nav>
                     <ul>
@@ -84,7 +83,35 @@
                     </ul>
                 </nav>
             </div>
+        </div>
 
+        <div class="banner primary">
+            <div class="slick-slider">
+                <div class="slider-item">
+                    <div class="slider-info">
+                        <div class="slider-image">
+                            <img src="img/banner-main-1.jpg" width="3257" height="1928">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="slider-info">
+                        <div class="slider-image">
+                            <img src="img/banner-main-2.jpg" width="2048" height="1536">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div class="slider-info">
+                        <div class="slider-image">
+                            <img src="img/banner-main-3.jpeg" width="1310" height="737">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
             <div class="sidebar left">
                 <div class="filters">
                     <form action="" class="form-filter" method="post" id="form-filter">
@@ -171,106 +198,48 @@
                 </div>
 
                 <div class="items">
-                    <div class="item">
-                        <div class="info">
-                            <div class="title">Cracker is a baked food typically made from flour!</div>
-                            <div class="description">
-                                <p>A cracker is a baked food typically made from flour. Flavorings or seasonings, such as salt, herbs, seeds, and/or cheese, may be added to the dough or sprinkled on top before baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.</p>
-                            </div>
-                        </div>
-                        <a href="" class="preview">
-                            <img src="img/cookie-1.jpg" width="250" height="250" alt="1">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <div class="info">
-                            <div class="title">Cracker is a baked food typically made from flour!</div>
-                            <div class="description">
-                                <p>A cracker is a baked food typically made from flour. Flavorings or seasonings, such as salt, herbs, seeds, and/or cheese, may be added to the dough or sprinkled on top before baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.</p>
-                            </div>
-                        </div>
-                        <a href="" class="preview">
-                            <img src="img/cookie-2.jpg" width="1300" height="1270"  alt="1">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <div class="info">
-                            <div class="title">Cracker is a baked food typically made from flour!</div>
-                            <div class="description">
-                                <p>A cracker is a baked food typically made from flour. Flavorings or seasonings, such as salt, herbs, seeds, and/or cheese, may be added to the dough or sprinkled on top before baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.</p>
-                            </div>
-                        </div>
-                        <a href="" class="preview">
-                            <img src="img/cookie-3.jpg" width="216" height="218" alt="1">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <div class="info">
-                            <div class="title">Cracker is a baked food typically made from flour!</div>
-                            <div class="description">
-                                <p>A cracker is a baked food typically made from flour. Flavorings or seasonings, such as salt, herbs, seeds, and/or cheese, may be added to the dough or sprinkled on top before baking. Crackers are often branded as a nutritious and convenient way to consume a staple food or cereal grain.</p>
-                            </div>
-                        </div>
-                        <div class="addtocard">
-                            <form action="" class="tocard" id="js-tocard">
-                                <div class="pickUp">
-                                    <input type="number" min="1" placeholder="1">
-                                    <input type="submit" class="secondary-button" value="add to card">
+                    <?php foreach($donut as $key_product => $product): ?>
+                        <div class="item-product" data-price="<?php echo $product['cost'] ?>">
+                            <div class="info">
+                                <div class="title"><?php echo $product['title'] ?></div>
+                                <div class="description">
+                                    <p><?php echo $product['description'] ?></p>
                                 </div>
-                                <div class="price">1.99$</div>
-                            </form>
+                            </div>
+                            <div class="addtocard">
+                                <form action="" class="to_card">
+                                    <div class="pickUp">
+                                        <input type="number" value="1" class="item-amount" min="1" placeholder="1">
+                                        <input type="submit" class="secondary-button" value="add to card">
+                                    </div>
+                                    <div class="price"></div>
+                                </form>
+                            </div>
+                            <a href="" class="preview">
+                                <img src="<?php echo $product['url'] ?>">
+                            </a>
                         </div>
-                        <a href="" class="preview">
-                            <img src="img/cookie-4.jpg" width="500" height="500" alt="1">
-                        </a>
-                    </div>
+                    <?php endforeach; ?>
 
-                    <div class="item current">
-
+                    <div class="item-product current">
                         <div class="slider secondary">
                             <div class="slider-detail">
-                                <div class="slider-item">
-                                    <div class="slider-info">
-                                        <div class="slider-image">
-                                            <img src="img/cookie-1.jpg" width="250" height="250" alt="1">
+                                <?php foreach($donut as $key_product => $product): ?>
+                                    <div data-slick="<?php echo $product['id'] ?>" class="slider-item">
+                                        <div class="slider-info">
+                                            <div class="slider-image">
+                                                <img src="<?php echo $product['url'] ?>">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-info">
-                                        <div class="slider-image">
-                                            <img src="img/cookie-4.jpg" width="500" height="500" alt="1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-info">
-                                        <div class="slider-image">
-                                            <img src="img/cookie-3.jpg" width="216" height="218" alt="1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-info">
-                                        <div class="slider-image">
-                                            <img src="img/cookie-2.jpg" width="1300" height="1270" alt="1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-info">
-                                        <div class="slider-image">
-                                            <img src="img/cookie-5.png" width="634" height="632" alt="1">
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                             <div id="carousel" class="carousel">
-                                <div><img src="img/cookie-1.jpg" width="250" height="250" alt="1"></div>
-                                <div><img src="img/cookie-4.jpg" width="500" height="500" alt="1"></div>
-                                <div><img src="img/cookie-3.jpg" width="216" height="218" alt="1"></div>
-                                <div><img src="img/cookie-2.jpg" width="450" height="438" alt="1"></div>
-                                <div><img src="img/cookie-5.png" width="634" height="632" alt="1"></div>
+                                <?php foreach($donut as $key_product => $product): ?>
+                                    <div>
+                                        <img src="<?php echo $product['url'] ?>">
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
 
@@ -280,7 +249,7 @@
                                 <div class="tabs-buttons">
                                     <ul>
                                         <li><a href="#characteristic">characteristic</a></li>
-                                        <li><a href="#details">details</a></li>
+                                        <li><a href="#detail">details</a></li>
                                         <li><a href="#feedbacks">feedbacks</a></li>
                                     </ul>
                                 </div>
@@ -294,7 +263,6 @@
                                                 <div class="counter">
                                                     <div class="count-left">
                                                         <label for="select">Choose cracker</label>
-
                                                         <select id="choose" class="choose">
                                                             <?php foreach($donut as $key_item => $item): ?>
                                                                 <option value="<?php echo $item['id'] ?>" data-price="<?php echo $item['cost'] ?>">
@@ -305,7 +273,7 @@
                                                     </div>
                                                     <div class="count-right">
                                                         <label for="amount">how much u need?</label>
-                                                        <input id="amount" value="1" placeholder="1" min="1" type="number">
+                                                        <input id="amount" type="number" value="1" placeholder="1" min="1">
                                                     </div>
                                                     <div class="count-left">
                                                         <input class="secondary-button js-calc" value="buy" type="submit">
@@ -316,11 +284,18 @@
                                                 </div>
                                                 <div class="result" id="result"></div>
                                                 <div class="calc-description" id="calc-description"></div>
-                                                <!--code for calc-description-->
+                                                <!-- for calc-description -->
                                                 <script>
-                                                    var description = {<?php foreach($donut as $item): ?>
-                                                    <?php echo $item['id'] ?>: '<?php echo $item['description'] ?>',
-                                                    <?php endforeach; ?>}
+//                                                   var description = {
+//                                                        <?php //foreach($donut as $item): ?>
+<!--                                                        --><?php //echo $item['id'] ?>// : '<?php //echo $item['description'] ?>//',
+//                                                        <?php //endforeach; ?>
+//                                                    }
+                                                    var description = {
+                                                        <?php foreach ($donut as $key => $item) {
+                                                            echo $item['id'] . ':"' . $item['description'] . '",';
+                                                        }?>
+                                                    }
                                                 </script>
                                                 <div class="more">
                                                     <a href="#purchase" class="">more...</a>
@@ -330,11 +305,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="tab-type" id="details">
+                                    <div class="tab-type" id="detail">
                                         <div class="info-inner">
                                             <div class="sub-title">details:</div>
                                             <p class="info-item">
                                                 <!--code for details-->
+                                                <script>
+                                                    var description = {
+                                                         <?php foreach($donut as $item): ?>
+                                                           <?php echo $item['id'] ?> : '<?php echo $item['description'] ?>',
+                                                         <?php endforeach; ?>
+                                                     }
+                                                </script>
                                             </p>
                                             <div class="more">
                                                 <a href="#purchase" class="">more...</a>
@@ -367,3 +349,4 @@
     <?php include 'footer.php'; ?>
 
 </body>
+</html>

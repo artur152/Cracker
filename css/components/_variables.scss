@@ -3,8 +3,6 @@ $black: #000;
 $white: #fff;
 
 
-
-$black-border: rgba(0, 0, 0, 0.15);
 $page: #1f1f1f;
 $gray: #393A3F;
 $gray-light: #9C9C9C;
@@ -15,12 +13,14 @@ $red: #BD1A20;
 $red-light: #BF5156;
 $red-dark: #962427;
 $darken-red: darken($red,4%);
-$blue: #0080C9;
+
+$blue: #59617f;
+$lighten-blue: darken($blue,10%);
 $blue-light: #00B8EC;
 $green: #64dd17;
 $outline: rgba(107, 206, 221, 1);
 
-$primary-color: $red;
+$primary-color: $blue;
 
 $circle-size: 190px;
 

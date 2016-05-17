@@ -93,6 +93,7 @@ header {
       float: left;
       margin-right: 50px;
       .site-name{
+        font-family: $font-bold;
         font-size: 20px;
         line-height: 24px;
         margin-right: 10px;
@@ -113,15 +114,15 @@ header {
       padding: 0;
       list-style: none;
       li{
-        border-right: 1px solid $black-border;
+        border-right: 1px solid $gray;
         display: table-cell;
         &:first-child{
-          border-left: 1px solid $black-border;
+          border-left: 1px solid $gray;
         }
         a{
           padding: 28px 15px;
           &:hover{
-            background: $darken-red;
+            background: $lighten-blue;
           }
         }
       }
@@ -131,8 +132,8 @@ header {
       vertical-align: top;
       border-top: none;
       border-bottom: none;
-      border-left: 1px solid $black-border;
-      border-right: 1px solid $black-border;
+      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
       &.show {
         .header-form{
           position: relative;
@@ -176,12 +177,38 @@ header {
   margin: 0 0 15px 0;
 }
 
+.banner{
+  .slick-slider{
+    max-height: 600px;
+    overflow: hidden;
+    cursor: pointer;
+    border-top: 3px solid $primary-color;
+    .slider-item{
+      outline: none;
+      position: relative;
+      border: none;
+    }
+    .slider-image{
+      img{
+        width: 100%;
+        height:auto;
+      }
+    }
+    .slick-arrow{
+      display: none;
+    }
+    .slick-dots{
+      display: none;
+    }
+  }
+}
+
+
 .menu-categories{
   @extend .clearfix;
   .subcategory, .category{
     float: left;
     margin-right: 10px;
-    margin-bottom: 10px;
     a{
       font-size: 14px;
       line-height: 18px;
@@ -311,7 +338,7 @@ header {
             }
           }
           input:checked + label:before{
-            background: $darken-red;
+            background: $lighten-blue;
           }
         }
       }
@@ -335,6 +362,8 @@ header {
   overflow: hidden;
   background: $gray-light-bg;
   padding: 15px;
+  margin-top: 15px;
+  border-top: 3px solid $primary-color;
 
   .hyperlink{
     background: $white;
@@ -348,10 +377,10 @@ header {
 
   .items{
     @extend .clearfix;
-    .item{
+    .item-product{
       position: relative;
       float: left;
-      width:32%;
+      width: 32%;
       margin-bottom: 15px;
       padding: 15px;;
       height: 300px;
@@ -373,6 +402,7 @@ header {
         left: 0;
         z-index:1;
         padding: 15px;
+        width: 100%;
         height: 100%;
         cursor: pointer;
         background: rgba(255, 255, 255, 0.7);
@@ -397,6 +427,11 @@ header {
             padding: 15px;
             max-height: 105px;
             overflow: hidden;
+            &:first-letter{
+              font-size: 17px;
+              text-transform: capitalize;
+              font-family: $font-bold;
+            }
           }
         }
       }
@@ -428,7 +463,7 @@ header {
         margin-right: 2%;
       }
     }
-    .item.current{
+    .item-product.current{
       width:100%;
       float: none;
       height: auto;
@@ -439,6 +474,7 @@ header {
         position: relative;
         background: $white;
         width: 50%;
+        min-width: 430px;
         overflow: hidden;
         cursor: auto;
         .title{
@@ -460,7 +496,7 @@ header {
                 font-size: 16px;
                 line-height: 18px;
                 background: $white;
-                color: $red;
+                color: $blue;
               }
             }
           }
@@ -576,7 +612,7 @@ footer{
             float: none;
             @extend .transition;
             &:hover{
-              background: lighten($darken-red, 5%);
+              background: lighten($lighten-blue, 5%);
             }
             &:before{
               content: '';
@@ -624,12 +660,13 @@ footer{
         }
         img{
           margin:0 auto;
-          width: 120px;
+          width: 80px;
           height: auto;
           display: block;
         }
         h2{
           font-family: $font-regular;
+          font-size: 20px;
           color: $white;
           margin-top: 5px;
           margin-bottom: 0;
@@ -658,7 +695,7 @@ footer{
         }
         a{
           font-family:$font-bold;
-          color: $darken-red;
+          color: $white;
           text-transform: uppercase;
           font-size: 24px;
           line-height: 28px;

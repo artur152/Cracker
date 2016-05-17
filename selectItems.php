@@ -24,7 +24,7 @@ function chooseDonuts(){
 //MySQLi Object-Oriented
     try {
         $conn = new mysqli( $hostname, $username, $password, $database);
-        $sql = "SELECT * FROM cookies";
+        $sql = "SELECT *, image.title AS img_title, cookies.title AS title FROM cookies LEFT JOIN image ON image.id = cookies.id";
         $result = $conn->query($sql);
 
         $rows = array();
@@ -32,6 +32,7 @@ function chooseDonuts(){
         while( $row = $result->fetch_assoc() ) {
             $rows[] = $row;
         }
+//        var_dump($rows);
         return $rows;
     }
     catch(PDOException $e) {

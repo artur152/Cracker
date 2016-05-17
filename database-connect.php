@@ -15,7 +15,6 @@ $database = "cracker";
 //}
 
 
-
 //MySQLi Object-Oriented
 $conn = new mysqli( $hostname, $username, $password, $database);
 
