@@ -3,7 +3,7 @@
 require_once 'database-connect.php';
 
 function chooseDonuts(){
-    $username = "root";
+    $username = "cracker";
     $password = "1";
     $hostname = "localhost";
     $database = "cracker";
@@ -24,7 +24,8 @@ function chooseDonuts(){
 //MySQLi Object-Oriented
     try {
         $conn = new mysqli( $hostname, $username, $password, $database);
-        $sql = "SELECT *, image.title AS img_title, cookies.title AS title FROM cookies LEFT JOIN image ON image.id = cookies.id";
+//        $sql = "SELECT *, image.title AS img_title, cookies.title AS title FROM cookies LEFT JOIN image ON image.id = cookies.id";
+        $sql = "SELECT * FROM cookies";
         $result = $conn->query($sql);
 
         $rows = array();

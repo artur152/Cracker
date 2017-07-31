@@ -33,8 +33,6 @@
         <div class="wrapper">
             <div class="content">
 
-
-
             </div>
         </div>
     </div>

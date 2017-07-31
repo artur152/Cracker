@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.8.2-beta" last-position="217,0" last-zoom="0.9"
+	 default-schema="public" default-owner="postgres">
+<database name="portal">
+</database>
+
+<schema name="public" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="categoies">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="862.222" y="5.55555"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="alias" not-null="true">
+		<type name="varchar" length="191"/>
+	</column>
+	<column name="seo_title">
+		<type name="varchar" length="191"/>
+	</column>
+	<column name="seo_description">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="seo_keywords">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="categoies_id" type="pk-constr" table="public.categoies">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="characteristics">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="322.223" y="107.778"/>
+	<column name="id" not-null="true">
+		<type name="bigserial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="characteristics_id" type="pk-constr" table="public.characteristics">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_characteristic_groups" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="characteristic_groups_fk" index="1"/>
+	</customidxs>
+</table>
+
+<table name="characteristic_values">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="325.556" y="222.222"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<column name="value" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="characteristic_values_id" type="pk-constr" table="public.characteristic_values">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_characteristics" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="characteristics_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="characteristics_has_many_characteristic_values" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#53cdf4"
+	 src-table="public.characteristics"
+	 dst-table="public.characteristic_values"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="643.923" y="207.6"/>
+	<position x="604.256" y="207.6"/>
+	</line>
+	<label ref-type="dst-label">
+		<position x="0.09" y="12.8"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="101.964" y="-2.54955"/>
+	</label>
+</relationship>
+
+<table name="products">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="862.222" y="421.111"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="alias" not-null="true">
+		<type name="varchar" length="191"/>
+	</column>
+	<column name="seo_title">
+		<type name="varchar" length="191"/>
+	</column>
+	<column name="seo_description">
+		<type name="varchar" length="255"/>
+	</column>
+	<column name="seo_keywords">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="products_id" type="pk-constr" table="public.products">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_categoies" index="6"/>
+		<object name="id_user_accounts" index="7"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="categoies_fk" index="1"/>
+		<object name="user_accounts_fk" index="2"/>
+	</customidxs>
+</table>
+
+<table name="characteristic_groups">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="419" y="9.33329"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="characteristic_groups_id" type="pk-constr" table="public.characteristic_groups">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="characteristics_groups_has_many_characteristics" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ab6537"
+	 src-table="public.characteristic_groups"
+	 dst-table="public.characteristics"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="67.5919" y="-45.5495"/>
+	</label>
+</relationship>
+
+<relationship name="many_products_has_many_characteristic_values" type="relnn"
+	 src-col-pattern="{sc}_{st}" dst-col-pattern="{sc}_{dt}"
+	 pk-pattern="{gt}_pk" uq-pattern="{gt}_uq"
+	 src-fk-pattern="{st}_fk" dst-fk-pattern="{dt}_fk"
+	 pk-col-pattern="id"
+	 custom-color="#573596"
+	 src-table="public.products"
+	 dst-table="public.characteristic_values"
+	 src-required="false" dst-required="false"
+	 table-name="many_products_has_many_characteristic_values">
+	<label ref-type="name-label">
+		<position x="3.50858" y="-47.9327"/>
+	</label>
+</relationship>
+
+<relationship name="categoies_has_many_products" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ca9220"
+	 src-table="public.categoies"
+	 dst-table="public.products"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="16.3531" y="-2.21622"/>
+	</label>
+</relationship>
+
+<index name="categoies_alias" table="public.categoies"
+	 concurrent="false" unique="true" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="alias"/>
+		</idxelement>
+</index>
+
+<index name="products_alias" table="public.products"
+	 concurrent="false" unique="true" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="alias"/>
+		</idxelement>
+</index>
+
+<table name="properties">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="358.889" y="564.445"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="properties_id" type="pk-constr" table="public.properties">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="propertie_values">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="312.222" y="464.444"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="value" not-null="true">
+		<type name="varchar" length="255"/>
+	</column>
+	<constraint name="propertie_values_id" type="pk-constr" table="public.propertie_values">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_properties" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="properties_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="many_products_has_many_propertie_values" type="relnn"
+	 src-col-pattern="{sc}_{st}" dst-col-pattern="{sc}_{dt}"
+	 pk-pattern="{gt}_pk" uq-pattern="{gt}_uq"
+	 src-fk-pattern="{st}_fk" dst-fk-pattern="{dt}_fk"
+	 pk-col-pattern="id"
+	 custom-color="#bb4fb9"
+	 src-table="public.products"
+	 dst-table="public.propertie_values"
+	 src-required="false" dst-required="false"
+	 table-name="many_products_has_many_propertie_values"/>
+
+<relationship name="properties_has_many_propertie_values" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ad696b"
+	 src-table="public.properties"
+	 dst-table="public.propertie_values"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-129.275" y="-34.216"/>
+	</label>
+</relationship>
+
+<table name="users">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1351.11" y="15.5556"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<column name="email">
+		<type name="varchar" length="191"/>
+	</column>
+	<constraint name="users_id" type="pk-constr" table="public.users">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="user_accounts">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1158.89" y="112.222"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<constraint name="user_accounts_id" type="pk-constr" table="public.user_accounts">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_users" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="users_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="users_has_many_user_accounts" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#7437f7"
+	 src-table="public.users"
+	 dst-table="public.user_accounts"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-97.647" y="-42.2162"/>
+	</label>
+</relationship>
+
+<relationship name="user_accounts_has_many_products" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#c4cd37"
+	 src-table="public.user_accounts"
+	 dst-table="public.products"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-5.81364" y="-48.1051"/>
+	</label>
+</relationship>
+
+<table name="product_images">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="661.111" y="682.222"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<column name="uri" not-null="true">
+		<type name="text"/>
+	</column>
+	<constraint name="product_images_id" type="pk-constr" table="public.product_images">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_products" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="products_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="products_has_many_product_images" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#24c7d8"
+	 src-table="public.products"
+	 dst-table="public.product_images"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="120.353" y="-26.4385"/>
+	</label>
+</relationship>
+
+<table name="cart">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1357.78" y="247.778"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<constraint name="cart_id" type="pk-constr" table="public.cart">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_products" index="2"/>
+		<object name="id_users" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="products_fk" index="2"/>
+		<object name="users_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="users_has_many_cart" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#e67ce5"
+	 src-table="public.users"
+	 dst-table="public.cart"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="1547.14" y="44.1556"/>
+	<position x="1547.14" y="290.378"/>
+	</line>
+</relationship>
+
+<relationship name="products_has_many_cart" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#6f7359"
+	 src-table="public.products"
+	 dst-table="public.cart"
+	 src-required="false" dst-required="false"/>
+
+<table name="orders">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1400" y="473.334"/>
+	<column name="id" not-null="true" default-value="gen_random_uuid()">
+		<type name="uuid"/>
+	</column>
+	<constraint name="orders_id" type="pk-constr" table="public.orders">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_users" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="users_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="users_has_many_orders" type="rel1n"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#f936a4"
+	 src-table="public.users"
+	 dst-table="public.orders"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="1640.13" y="44.1556"/>
+	<position x="1640.13" y="510.378"/>
+	</line>
+</relationship>
+
+<relationship name="many_orders_has_many_products" type="relnn"
+	 src-col-pattern="{sc}_{st}" dst-col-pattern="{sc}_{dt}"
+	 pk-pattern="{gt}_pk" uq-pattern="{gt}_uq"
+	 src-fk-pattern="{st}_fk" dst-fk-pattern="{dt}_fk"
+	 pk-col-pattern="id"
+	 custom-color="#28c7a8"
+	 src-table="public.orders"
+	 dst-table="public.products"
+	 src-required="false" dst-required="false"
+	 table-name="many_orders_has_many_products">
+	<label ref-type="name-label">
+		<position x="21.8959" y="-3.32183"/>
+	</label>
+</relationship>
+
+</dbmodel>

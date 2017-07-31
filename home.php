@@ -312,9 +312,10 @@
                                                 <!--code for details-->
                                                 <script>
                                                     var description = {
-                                                         <?php foreach($donut as $item): ?>
-                                                           <?php echo $item['id'] ?> : '<?php echo $item['description'] ?>',
-                                                         <?php endforeach; ?>
+                                                    <?php foreach($donut as $item): ?>
+                                                    <?php echo $item['id'] ?> :
+                                                    '<?php echo $item['description'] ?>',
+                                                    <?php endforeach; ?>
                                                      }
                                                 </script>
                                             </p>

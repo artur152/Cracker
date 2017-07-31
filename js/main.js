@@ -6,6 +6,7 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+/*Header search	*/
 	var header_search = document.getElementsByClassName("header-search")[0];
 	var form = document.getElementsByClassName("form")[0];
 
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			var slideIndex = slideItem.attr('data-slick-index');
 			console.log(slideIndex);
 
-			sliderDetail.slick('slickGoTo', slideIndex, true);
+			sliderDetail.slick('slickGoTo', slideIndex, false);
 
 			calc();
 		});
@@ -135,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			result.html(charged);
 			calc_description.html(description[choosePrice.val()]);
-
 		}
 	}
 
@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			console.log(lastCost);
 		}
 	}
+
 
 
 });
